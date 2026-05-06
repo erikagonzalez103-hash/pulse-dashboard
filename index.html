@@ -51,6 +51,127 @@
 
   .cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
 
+  /* ============ ACCESS GATE ============ */
+  .pulse-gate {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .pulse-gate::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(240,192,96,0.06), transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(147,20,15,0.05), transparent 50%);
+    pointer-events: none;
+  }
+  .gate-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 40px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+  .gate-mark {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: block;
+    box-shadow:
+      0 0 50px rgba(147,20,15,0.22),
+      0 0 0 1px rgba(240, 192, 96, 0.3);
+  }
+  .gate-title {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .gate-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .gate-msg {
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .gate-form input {
+    background: var(--bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .gate-form input:focus { border-color: var(--gold); }
+  .gate-form button {
+    background: var(--gold);
+    color: var(--bg);
+    border: none;
+    border-radius: 999px;
+    padding: 12px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  .gate-form button:hover { opacity: 0.9; }
+  .gate-form button:active { transform: scale(0.98); }
+  .gate-error {
+    font-size: 12px;
+    color: var(--red-bright);
+    min-height: 18px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  .gate-foot {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .pulse-gate.locked ~ * { display: none !important; }
+
   /* ============ NAV ============ */
   nav {
     position: sticky;
@@ -588,6 +709,79 @@
 </head>
 <body>
 
+<!-- ============ ACCESS GATE ============ -->
+<div id="pulse-gate" class="pulse-gate" style="display: none;">
+  <div class="gate-card">
+    <img src="pulse-mark-compass.jpg" alt="Pulse" class="gate-mark">
+    <div class="gate-title">PULSE</div>
+    <div class="gate-sub">Team Access</div>
+    <p class="gate-msg">
+      This hub contains pre-launch information. Please enter the team password to continue.
+    </p>
+    <form class="gate-form" id="gate-form" autocomplete="off">
+      <input type="password" id="gate-pw" placeholder="Team password" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+    </form>
+    <div class="gate-error" id="gate-err"></div>
+    <div class="gate-foot">Confidential · Subject to NDA</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // SHA-256 hash of the team password
+  // To change the password: hash a new password with SHA-256 and replace the value below.
+  // Quick way: open browser console, paste:
+  //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR-NEW-PASSWORD'))
+  //     .then(b => console.log(Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')));
+  const PASSWORD_HASH = 'nunya;
+  const TOKEN_KEY = 'pulse_team_unlocked_v1';
+
+  async function sha256(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  const gate = document.getElementById('pulse-gate');
+
+  // Already unlocked this session?
+  try {
+    if (sessionStorage.getItem(TOKEN_KEY) === PASSWORD_HASH) {
+      gate.remove();
+      return;
+    }
+  } catch (e) { /* sessionStorage unavailable */ }
+
+  // Show gate
+  gate.style.display = 'flex';
+  document.documentElement.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+
+  document.getElementById('gate-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const pw = document.getElementById('gate-pw').value;
+    const err = document.getElementById('gate-err');
+    err.textContent = '';
+    if (!pw) { err.textContent = 'Please enter the password.'; return; }
+    const hash = await sha256(pw);
+    if (hash === PASSWORD_HASH) {
+      try { sessionStorage.setItem(TOKEN_KEY, hash); } catch (e) { /* ignore */ }
+      gate.style.opacity = '0';
+      gate.style.transition = 'opacity 0.4s';
+      setTimeout(() => {
+        gate.remove();
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      }, 400);
+    } else {
+      err.textContent = 'Incorrect password. Please try again.';
+      document.getElementById('gate-pw').value = '';
+      document.getElementById('gate-pw').focus();
+    }
+  });
+})();
+</script>
+
 <nav>
   <div class="brand">PULSE</div>
   <ul class="nav-links">
@@ -596,6 +790,7 @@
     <li><a href="#strategy">Strategy</a></li>
     <li><a href="#investors">Investors</a></li>
     <li><a href="#financials">Financials</a></li>
+    <li><a href="#legal">NDA</a></li>
     <li><a href="#brand">Brand</a></li>
     <li><a href="#timeline">Timeline</a></li>
   </ul>
@@ -749,6 +944,37 @@
       <div class="card-desc">3-minute narrative for financial/tech investors, momentum definitions, anticipated questions with answers (defensibility, CAC/LTV, scale, why-not-Yelp), pricing model walkthrough, ask structure.</div>
       <a href="Pulse_Investor_Talking_Points.docx" class="card-link">Download <span class="card-arrow">→</span></a>
     </div>
+  </div>
+</section>
+
+<!-- ===================== CONFIDENTIALITY ===================== -->
+<section id="legal">
+  <div class="eyebrow">Confidentiality</div>
+  <h2 class="section-title">Team Access &amp; NDA</h2>
+  <p class="section-intro">
+    This hub is gated and the materials within are confidential. Every team member, contractor, and advisor signs the Pulse confidentiality agreement before access. The agreement is Texas-governed (forming jurisdiction) with Dallas County venue, and it incorporates current Texas Uniform Trade Secrets Act and federal Defend Trade Secrets Act requirements.
+  </p>
+
+  <div class="grid">
+    <div class="card" style="border-color: var(--border);">
+      <div class="card-label">Sign · Required</div>
+      <div class="card-title">Team Confidentiality Agreement</div>
+      <div class="card-meta">7 pages · Texas-governed · DTSA-compliant</div>
+      <div class="card-desc">The signable NDA. Defines confidential information, prohibits family/casual sharing specifically, mandates injunctive relief without bond, allows attorney&rsquo;s fees recovery under Texas CPRC Ch. 38, and includes the federal whistleblower notice required by 18 U.S.C. § 1833(b).</div>
+      <a href="Pulse_Team_NDA.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Founder Reference</div>
+      <div class="card-title">NDA Founder&rsquo;s Guide</div>
+      <div class="card-meta">10 pages · Annotated commentary · For founder use only</div>
+      <div class="card-desc">Cover memo from senior IP counsel persona. Clause-by-clause commentary explaining why each provision matters. 20-minute onboarding walkthrough script. Tracking and offboarding procedures. Use this when walking team members through the NDA.</div>
+      <a href="Pulse_NDA_Founder_Guide.docx" class="card-link secondary">Download <span class="card-arrow">→</span></a>
+    </div>
+  </div>
+
+  <div style="background: var(--bg-card); border: 1px solid var(--border-soft); border-left: 3px solid var(--red); border-radius: 6px; padding: 24px 28px; margin-top: 24px; font-size: 13px; color: var(--text-dim); line-height: 1.7;">
+    <strong style="color: var(--text); font-weight: 600;">Before production use:</strong> The NDA is a template draft prepared in the persona of an experienced Texas IP attorney. It incorporates current TUTSA and DTSA requirements, but every situation has wrinkles. Have a licensed Texas attorney review it (30–45 minutes, $300–600) before having team members sign. Specific situations requiring attorney review include cap-table considerations, IP assignment for technical contributors, engagements with team members in California, and any non-compete restrictions.
   </div>
 </section>
 
