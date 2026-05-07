@@ -100,7 +100,7 @@
     z-index: 1;
   }
   @media (max-width: 1100px) {
-    main { grid-template-columns: 1fr; }
+    main { grid-template-columns: minmax(0, 1fr); }
   }
 
   /* SLIDER PANEL */
@@ -114,7 +114,27 @@
     top: 80px;
   }
   @media (max-width: 1100px) {
-    .controls { position: static; }
+    .controls { position: static; min-width: 0; }
+  }
+  @media (max-width: 768px) {
+    main { padding: 16px 20px 60px; gap: 20px; }
+    .controls { padding: 20px 18px; }
+    .controls-header h2 { font-size: 12px; letter-spacing: 0.25em; }
+    .reset-btn { font-size: 10px; padding: 5px 12px; letter-spacing: 0.08em; }
+    header.page-header { padding: 40px 20px 20px; }
+    h1.title { font-size: clamp(28px, 7vw, 36px); }
+    .lede { font-size: 14px; }
+    .hero-metrics { grid-template-columns: 1fr; gap: 12px; }
+    .metric-card { padding: 20px; }
+    .metric-value { font-size: clamp(28px, 7vw, 34px); }
+    .panel { padding: 18px 16px; }
+    .panel-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .pnl-grid { grid-template-columns: 1fr; gap: 10px; }
+    .scenarios { grid-template-columns: 1fr; gap: 10px; }
+    .y1-grid { grid-template-columns: 1fr; }
+    .chart-container { height: 200px; }
+    nav { padding: 14px 20px; }
+    .brand { font-size: 18px; letter-spacing: 4px; }
   }
   .controls-header {
     display: flex; justify-content: space-between; align-items: baseline;
@@ -380,6 +400,12 @@
   }
 
   /* Scenarios */
+  .y1-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
   .scenarios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -651,7 +677,7 @@
         <span><span class="legend-swatch" style="background: var(--gold-dim); opacity: 0.7;"></span>Subscription + Boost</span>
         <span><span class="legend-swatch" style="background: var(--gold);"></span>WC Window (June + July)</span>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px;">
+      <div class="y1-grid">
         <div class="pnl-cell">
           <div class="pnl-cell-label">Year 1 Revenue</div>
           <div class="pnl-cell-value" id="o-y1-revenue">$273,362</div>
