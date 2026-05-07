@@ -209,6 +209,41 @@
   }
   .nav-links a:hover { color: var(--gold); }
 
+  /* Hamburger button — hidden on desktop, shown on mobile */
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.2s;
+  }
+  .nav-toggle:hover { background: var(--gold-soft); }
+  .nav-toggle svg { width: 20px; height: 20px; }
+
+  /* Hero CTA — visible on mobile only, scrolls to pitch */
+  .hero-cta {
+    display: none;
+    margin-top: 32px;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--bg);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+  }
+  .hero-cta:active { opacity: 0.85; }
+
   /* ============ HERO ============ */
   .hero {
     position: relative;
@@ -698,12 +733,76 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    section { padding: 60px 20px; }
-    .hero { padding: 80px 20px 60px; }
-    .pitch-block { padding: 32px 24px; }
+    /* Remove backdrop-filter from nav on mobile — it creates a containing
+       block that prevents position:fixed children from covering the viewport */
+    nav {
+      padding: 14px 20px;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: var(--bg);
+    }
+    .brand { letter-spacing: 4px; font-size: 20px; }
+    .nav-toggle { display: flex; }
+
+    /* Mobile nav: full-screen overlay when active */
+    .nav-links {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: #06090F;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      z-index: 9000;
+      padding: 40px;
+      margin: 0;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links a {
+      font-size: 16px;
+      letter-spacing: 0.25em;
+      color: var(--text);
+      padding: 8px 16px;
+    }
+    .nav-links a:active { color: var(--gold); }
+
+    .nav-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero — compressed for mobile, CTA visible */
+    .hero { padding: 50px 20px 60px; }
+    .hero-mark-img { width: 110px; margin-bottom: 24px; }
+    .hero-mark { font-size: 56px; letter-spacing: 0.18em; margin-bottom: 12px; }
+    .hero-sublabel { letter-spacing: 0.4em; margin-bottom: 32px; font-size: 11px; }
+    .hero-divider { margin-bottom: 32px; }
+    .hero-tagline { font-size: 12px; letter-spacing: 0.25em; margin-bottom: 36px; }
     .hero-tagline span { display: block; margin: 4px 0; }
+    .hero-cta { display: inline-block; }
+    .hero-status { font-size: 11px; letter-spacing: 0.2em; padding: 12px 22px; }
+
+    section { padding: 60px 20px; }
+    .pitch-block { padding: 32px 24px; }
+    .pitch-text { font-size: 17px; line-height: 1.75; }
+    .panel, .brand-card { padding: 22px 20px; }
+    h2.section-title { font-size: 28px; }
+
+    .gate-card { padding: 36px 24px; }
+    .gate-mark { width: 88px; height: 88px; }
+    .gate-title { font-size: 30px; }
   }
 </style>
 </head>
@@ -734,7 +833,7 @@
   // Quick way: open browser console, paste:
   //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR-NEW-PASSWORD'))
   //     .then(b => console.log(Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')));
-  const PASSWORD_HASH = 'nunya;
+  const PASSWORD_HASH = '6e25884750ff419e616859f09318fa1bb505d79c5f3c53c48a810a59a7f068f2';
   const TOKEN_KEY = 'pulse_team_unlocked_v1';
 
   async function sha256(text) {
@@ -784,7 +883,17 @@
 
 <nav>
   <div class="brand">PULSE</div>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" type="button">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M3 6h14M3 10h14M3 14h14"/>
+    </svg>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <button class="nav-close" id="nav-close" aria-label="Close menu" type="button">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+        <path d="M5 5l10 10M15 5l-10 10"/>
+      </svg>
+    </button>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#strategy">Strategy</a></li>
@@ -807,6 +916,7 @@
   <div class="hero-status">
     <span class="dot"></span>Soft launch · July 14, 2026
   </div>
+  <a href="#overview" class="hero-cta">Read the pitch ↓</a>
 </header>
 
 <!-- ===================== OVERVIEW ===================== -->
@@ -1254,6 +1364,32 @@
   <div class="footer-text">Dallas · Project Hub · 2026</div>
   <div class="footer-text" style="margin-top: 8px;">Worth Your Time · Worth Your Money · Worth Your Story</div>
 </footer>
+
+<script>
+// ============ MOBILE NAV ============
+(function() {
+  const toggle = document.getElementById('nav-toggle');
+  const close  = document.getElementById('nav-close');
+  const menu   = document.getElementById('nav-links');
+  if (!toggle || !menu) return;
+
+  function openMenu()  { menu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { menu.classList.remove('active'); document.body.style.overflow = ''; }
+
+  toggle.addEventListener('click', openMenu);
+  if (close) close.addEventListener('click', closeMenu);
+
+  // Close when any link inside is tapped
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+</script>
 
 </body>
 </html>
