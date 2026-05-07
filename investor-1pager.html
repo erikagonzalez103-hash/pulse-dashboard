@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Investor 1-Pager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+(function() {
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Investors</div>
+    <h1 class="doc-title">Investor 1-Pager</h1>
+    <p class="doc-subtitle">The leave-behind. Category, problem, defensibility, milestone target. Designed for the post-meeting follow-up email or the 60-second hand-off.</p>
+    <div class="doc-meta">Single-page summary &middot; $175k seed bridge ask</div>
+  </div>
+
+  
+<p class="lede">Pulse is the momentum layer for cities. Real-time discovery for what's accelerating, neighborhood by neighborhood. Launching in Dallas, July 14, 2026.</p>
+
+<div class="card-block">
+  <div class="card-block-title">The Problem</div>
+  <p>Yelp captures reputation. Instagram captures attention. Google captures intent. None of them tell you what's <em>actually happening right now</em>. Discovery tools today are static. Reviews are 18 months old. Algorithms reward engagement, not relevance. Locals work around it. Visitors get default-routed to the same five places. Vendors with real momentum can't surface above incumbents. There's a layer missing.</p>
+</div>
+
+<div class="card-block">
+  <div class="card-block-title">The Solution</div>
+  <p>Pulse measures velocity, not volume. We aggregate signals across check-ins, social mentions, time-of-day energy, and vendor-supplied real-time data to produce a live momentum score for every business and neighborhood. Score rings transition from cool to warm to fire as energy accumulates. Consumers get a live discovery surface; vendors get a dashboard, an offer engine, and the ability to boost in surge moments.</p>
+</div>
+
+<h2>Why Now &middot; Why Dallas</h2>
+<p>The FIFA World Cup is landing in Dallas this summer with nine matches at AT&amp;T Stadium and the semifinal on July 14. 250k+ visitors over five weeks, all making 24-hour decisions, all cut off from local reputation context. Reputation tools fail this user. Momentum tools win them. We launch July 14 with founding vendors locked, infrastructure tested, and a city primed by the most expensive sports tourism event of the decade.</p>
+
+<h2>Unit Economics</h2>
+<table>
+<tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+<tr><td>Average Revenue / Vendor / Month</td><td>$175</td><td>Blended across $99 / $199 / $399 tiers</td></tr>
+<tr><td>Customer Acquisition Cost</td><td>$375</td><td>Current spend at 10–20 onboards/mo</td></tr>
+<tr><td>Vendor Lifetime Value</td><td>$3,360</td><td>24-month retention &times; 80% gross margin</td></tr>
+<tr><td>LTV : CAC Ratio</td><td>8.96x</td><td>Healthy by SaaS benchmarks (3x+ standard)</td></tr>
+<tr><td>CAC Payback</td><td>2.1 months</td><td>Sub-3-month target</td></tr>
+<tr><td>Gross Margin</td><td>80%</td><td>Software-typical</td></tr>
+</table>
+
+<h2>The Ask</h2>
+<p>$175,000 seed bridge to capture the World Cup density window. Funds onboard 150 founding vendors, deploy production infrastructure, run launch marketing through tournament close, and produce a 12-month dataset of real-time city momentum that no one else has.</p>
+
+<h2>Team &middot; Defensibility &middot; Path</h2>
+<p><strong>Team:</strong> Founder Erika has executed the prelaunch research, vendor outreach, brand system, financial model, and product prototype. Bringing on technical and operations co-builders during the seed bridge.</p>
+<p><strong>Defensibility:</strong> Network density. Once we have the live signal at scale in a city, we <em>are</em> the live signal. New entrants would need our vendor density and our consumer behavioral data to compete on freshness — and freshness is the product.</p>
+<p><strong>Path:</strong> Dallas validates the playbook July 2026. Austin and Houston follow at 6 and 9 months. Then nationwide expansion in tier-2 metros where reputation tools work least well: Miami, Nashville, Charlotte, Phoenix.</p>
+
+<blockquote>
+<p>Reputation is static. Momentum is dynamic. And momentum is the whole game.</p>
+</blockquote>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

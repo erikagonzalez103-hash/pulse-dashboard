@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · 30-Second Pitch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Gate check: redirect to hub if not unlocked -->
+<script>
+(function() {
+  // Check if user unlocked via the hub. If not, redirect home.
+  // Reads from localStorage (set by the hub gate on successful unlock).
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      // Not unlocked — show locked message + link back to hub
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) { /* storage unavailable, fail open */ }
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Voice</div>
+    <h1 class="doc-title">30-Second Pitch</h1>
+    <p class="doc-subtitle">The team's shared starting point. Memorize the four anchor phrases &mdash; the rest fills itself in.</p>
+    <div class="doc-meta">3 pages &middot; Team reference</div>
+  </div>
+
+  
+<p class="lede">The 30-second pitch is the team's shared starting point. Memorize the four anchor phrases &mdash; the rest fills itself in.</p>
+
+<h2>The Pitch</h2>
+
+<blockquote>
+<p>Every city has a <em>pulse</em> &mdash; energy that builds around places in real time.</p>
+<p><strong><em>And nobody's measuring it.</em></strong></p>
+<p>Yelp captures reputation. Instagram captures attention. Google captures intent. None of them tell you what's <strong>actually happening right now</strong>.</p>
+<p><strong style="color: var(--pulse-gold);">That's Pulse.</strong></p>
+<p>We're the <strong>momentum layer for cities</strong> &mdash; surfacing what's accelerating, neighborhood by neighborhood, in real time.</p>
+<p><em><strong>Reputation is static. Momentum is dynamic.</strong></em></p>
+<p>And with the World Cup landing in Dallas this summer, <strong style="color: var(--pulse-gold);">momentum is the whole game</strong>.</p>
+</blockquote>
+
+<p style="text-align: right; font-size: 12px; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace;">~ 30 seconds &middot; ~ 83 words</p>
+
+<div class="divider"></div>
+
+<h2>The Four Anchor Phrases</h2>
+<p>Memorize these. The rest of the pitch flows naturally from them.</p>
+
+<div class="anchor-phrase">
+  <div class="anchor-phrase-label">Opener</div>
+  <div class="anchor-phrase-text">"Every city has a pulse"</div>
+</div>
+
+<div class="anchor-phrase">
+  <div class="anchor-phrase-label">The Gap</div>
+  <div class="anchor-phrase-text">"Yelp &middot; Instagram &middot; Google"</div>
+</div>
+
+<div class="anchor-phrase">
+  <div class="anchor-phrase-label">The Thesis</div>
+  <div class="anchor-phrase-text">"Reputation is static. Momentum is dynamic."</div>
+</div>
+
+<div class="anchor-phrase">
+  <div class="anchor-phrase-label">The Closer</div>
+  <div class="anchor-phrase-text">"Momentum is the whole game"</div>
+</div>
+
+<div class="divider"></div>
+
+<h2>Two Alternates</h2>
+
+<h3>Investor &middot; Formal</h3>
+<div class="card-block">
+  <p>Pulse is the momentum layer for cities. We surface, in real time, what's accelerating across local commerce &mdash; the businesses, neighborhoods, and moments where energy is building right now. Yelp measures reputation. Instagram measures attention. Google measures intent. None of them measure the dynamic. With the FIFA World Cup landing in Dallas this summer, the dynamic <em>is</em> the opportunity. We're launching to capture it.</p>
+</div>
+
+<h3>Casual &middot; At a Bar</h3>
+<div class="card-block">
+  <p>You ever notice how everywhere you'd actually want to be is the place no one's heard of yet? That's the gap we're building for. Pulse shows you what's hot in your city right now &mdash; not last year's reviews, not paid ads, the actual energy. Real time, neighborhood by neighborhood. We're starting in Dallas because of the World Cup. After that: everywhere.</p>
+</div>
+
+<div class="divider"></div>
+
+<h2>When They Ask, You Say</h2>
+
+<h3>"How is this different from Yelp?"</h3>
+<p>Yelp is a reputation graveyard. Reviews from three years ago decide where you eat tonight. Pulse measures the right-now &mdash; what's filling up, what just opened, what's spiking in the last 24 hours.</p>
+
+<h3>"What's the World Cup angle?"</h3>
+<p>Dallas hosts nine matches and the semifinal at AT&amp;T Stadium. A massive influx of out-of-towners with money to spend, no idea where to go, and 24-hour decisions to make. Reputation tools fail them. Momentum tools win them.</p>
+
+<h3>"How do you make money?"</h3>
+<p>Vendors subscribe ($99&ndash;$399/month) plus optional boost spend for surge moments. World Cup adds a one-time enterprise tier for tourism activations.</p>
+
+<h3>"What's the moat?"</h3>
+<p>Network density. Once we have the live signal in a city, we are the live signal &mdash; new entrants need our scale to compete on freshness, and freshness is the product.</p>
+
+<div class="divider"></div>
+
+<h2>Delivery Notes</h2>
+
+<table>
+<tr><th>DO</th><th>DON'T</th></tr>
+<tr>
+<td>Pause after "And nobody's measuring it" &mdash; let it land</td>
+<td>Rush through the anchor phrases</td>
+</tr>
+<tr>
+<td>Hit the rhythm: <em>Yelp &middot; Instagram &middot; Google</em></td>
+<td>Get into product features in the first 30 seconds</td>
+</tr>
+<tr>
+<td>Make the World Cup line confident, not desperate</td>
+<td>Apologize for the timing or describe it as "lucky"</td>
+</tr>
+<tr>
+<td>End on the closer; <em>then</em> let them ask</td>
+<td>Keep talking past the closer</td>
+</tr>
+</table>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Team Confidentiality Agreement</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Gate check: redirect to hub if not unlocked -->
+<script>
+(function() {
+  // Check if user unlocked via the hub. If not, redirect home.
+  // Reads from localStorage (set by the hub gate on successful unlock).
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      // Not unlocked — show locked message + link back to hub
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) { /* storage unavailable, fail open */ }
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Confidentiality</div>
+    <h1 class="doc-title">Team Confidentiality Agreement</h1>
+    <p class="doc-subtitle">The signable NDA. Texas-governed, DTSA-compliant. Every team member, contractor, and advisor signs this before access.</p>
+    <div class="doc-meta">Texas-governed &middot; Dallas County venue</div>
+  </div>
+
+  
+<p class="lede">Confidentiality and Non-Disclosure Agreement &middot; Texas-governed &middot; Dallas County venue</p>
+
+<p>This Confidentiality and Non-Disclosure Agreement (this "Agreement") is entered into as of _____________________ (the "Effective Date") by and between:</p>
+
+<p style="margin-left: 24px;"><strong>PULSE, INC.</strong>, a Texas corporation, with principal offices in Dallas, Texas ("Pulse");</p>
+
+<p style="margin-left: 24px; font-style: italic; color: var(--ink-soft);">and</p>
+
+<p style="margin-left: 24px;">_______________________________________ ("Recipient"), an individual residing at _______________________________________.</p>
+
+<p>Pulse and Recipient are referred to herein each as a "Party" and collectively as the "Parties."</p>
+
+<h3>Recitals</h3>
+<p>WHEREAS, Pulse is developing a real-time city-momentum platform launching in Dallas, Texas, and is in the process of building proprietary research, financial models, vendor relationships, product specifications, brand assets, and other confidential business information;</p>
+<p>WHEREAS, Recipient is being engaged by Pulse, in the capacity of employee, contractor, advisor, or other team member, in connection with which Recipient will be granted access to such confidential business information;</p>
+<p>WHEREAS, the Parties intend that all such information be treated as confidential and that Recipient be bound by the obligations set forth herein, including obligations consistent with the Texas Uniform Trade Secrets Act, Tex. Civ. Prac. &amp; Rem. Code &sect;&sect; 134A.001&ndash;008, and the federal Defend Trade Secrets Act, 18 U.S.C. &sect;&sect; 1831 et seq.;</p>
+<p>NOW, THEREFORE, in consideration of the mutual covenants set forth herein, and for other good and valuable consideration including the engagement and access described above, the receipt and sufficiency of which are hereby acknowledged, the Parties agree as follows:</p>
+
+<div class="legal-clause">
+<div class="legal-clause-title">1. DEFINITION OF CONFIDENTIAL INFORMATION</div>
+<p>"Confidential Information" means any non-public information, in any form (oral, written, electronic, visual, or otherwise), disclosed or made available to Recipient by Pulse, or to which Recipient otherwise gains access in connection with Recipient's relationship with Pulse, including without limitation: (a) the Pulse Project Hub and its constituent documents (including research briefs, strategy materials, financial models, vendor information, investor materials, brand assets, and product specifications); (b) financial projections, models, scenario analyses, and unit economics; (c) lists, identities, and characteristics of vendors, customers, prospects, and investors at any stage of conversation, contemplation, or engagement; (d) market research findings, survey data, and consumer or vendor interview transcripts and notes; (e) product specifications, designs, source code, algorithms, data structures, and technical architecture; (f) business strategy, pricing, marketing plans, and launch timelines; (g) the existence and terms of this Agreement; and (h) any other information that a reasonable person in Recipient's position would understand to be confidential under the circumstances. For the avoidance of doubt, Confidential Information includes information meeting the definition of "trade secret" under Tex. Civ. Prac. &amp; Rem. Code &sect; 134A.002 and 18 U.S.C. &sect; 1839, including without limitation lists of actual or potential vendors, customers, and investors, but the obligations of this Agreement extend to all Confidential Information regardless of whether such information meets the statutory definition of a trade secret.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">2. EXCLUSIONS</div>
+<p>Confidential Information does not include information that Recipient can demonstrate, by contemporaneous written records: (a) was generally known to the public at the time of disclosure to Recipient through no act or omission of Recipient; (b) became generally known to the public after disclosure to Recipient through no act or omission of Recipient; (c) was known to Recipient prior to disclosure by Pulse, free of any obligation of confidentiality; (d) was lawfully received by Recipient from a third party without a duty of confidentiality and without restriction on disclosure; or (e) was independently developed by Recipient without use of or reference to any Confidential Information.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">3. PERMITTED USE</div>
+<p>Recipient shall use Confidential Information solely for the purpose of performing services for, or contributing to the work of, Pulse (the "Permitted Purpose"). Recipient shall not use Confidential Information for Recipient's personal benefit, for the benefit of any third party, or for any commercial purpose other than the Permitted Purpose. Without limiting the foregoing, Recipient shall not use Confidential Information in connection with any current or future engagement with any third party, including but not limited to any competing business, employer, client, or investor.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">4. NON-DISCLOSURE OBLIGATIONS</div>
+<p>Recipient shall not, without Pulse's prior written consent: (a) disclose any Confidential Information to any person or entity, including without limitation Recipient's family members, household members, friends, social or professional acquaintances, current or former colleagues, or any third party; (b) post, share, display, or reference Confidential Information on any social media platform, public forum, blog, podcast, video channel, or website; (c) discuss Confidential Information in any public location where the conversation may reasonably be overheard, including without limitation restaurants, coffee shops, ride-share or taxi vehicles, airplanes, public transportation, gyms, or co-working spaces; or (d) photograph, screenshot, video record, audio record, or otherwise reproduce any Confidential Information for the purpose of, or with the foreseeable consequence of, sharing such reproduction with any party other than authorized members of the Pulse team. Recipient shall ensure that any device on which Confidential Information is stored or accessed is secured by a password, biometric lock, or equivalent measure.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">5. STANDARD OF CARE</div>
+<p>Recipient shall protect Confidential Information using at least the same degree of care that Recipient uses to protect Recipient's own most sensitive confidential information, and in no event less than a reasonable standard of care. Recipient acknowledges that Pulse is taking reasonable measures to protect Confidential Information within the meaning of Tex. Civ. Prac. &amp; Rem. Code &sect; 134A.002, including without limitation by entering into this Agreement, and Recipient agrees to act in a manner consistent with such reasonable measures.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">6. NO UNAUTHORIZED COPYING OR REMOVAL</div>
+<p>Except as strictly necessary to perform the Permitted Purpose, Recipient shall not copy, reproduce, or remove any Confidential Information from Pulse's premises, systems, accounts, or designated storage locations. Recipient shall not store Confidential Information on any personal device, account, or cloud-storage location not authorized by Pulse. Recipient shall not forward or copy Confidential Information to any personal email account or messaging application.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">7. RETURN OR DESTRUCTION</div>
+<p>Upon termination of Recipient's engagement with Pulse, or upon Pulse's written request at any time, Recipient shall promptly: (a) return to Pulse all materials containing Confidential Information, in any form or medium, then in Recipient's possession or control; (b) permanently delete all electronic copies of Confidential Information from any device, account, or storage location used by Recipient; and (c) upon Pulse's request, certify in writing that Recipient has complied with this Section. The obligations of this Agreement shall survive return or destruction of Confidential Information.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">8. TERM</div>
+<p>Recipient's obligations under this Agreement with respect to Confidential Information shall continue for a period of three (3) years following termination of Recipient's engagement with Pulse. With respect to information meeting the definition of a trade secret under Tex. Civ. Prac. &amp; Rem. Code &sect; 134A.002 or 18 U.S.C. &sect; 1839, Recipient's obligations shall continue for so long as such information retains its status as a trade secret under applicable law.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">9. REMEDIES</div>
+<p>Recipient acknowledges that any breach or threatened breach of this Agreement would cause Pulse irreparable harm for which monetary damages would be inadequate. Accordingly, Pulse shall be entitled to seek and obtain temporary, preliminary, and permanent injunctive relief, specific performance, and other equitable remedies, without the necessity of posting any bond or other security and without the necessity of proving actual damages, in addition to any other remedies available at law or in equity. In any action arising out of or relating to this Agreement, the prevailing party shall be entitled to recover from the non-prevailing party reasonable attorneys' fees, court costs, and expenses pursuant to Tex. Civ. Prac. &amp; Rem. Code Chapter 38 and any applicable federal authority including 18 U.S.C. &sect; 1836.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">10. NO LICENSE OR OTHER RIGHTS</div>
+<p>Nothing in this Agreement grants Recipient any license, ownership interest, or other right in or to any Confidential Information, or any patent, copyright, trademark, trade secret, or other intellectual property right of Pulse. All Confidential Information remains the sole property of Pulse.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">11. REQUIRED DISCLOSURE</div>
+<p>If Recipient is required by law, regulation, court order, or subpoena to disclose any Confidential Information, Recipient shall (to the extent legally permitted) provide Pulse with prompt written notice prior to such disclosure, cooperate with Pulse in seeking a protective order or other appropriate remedy, and disclose only that portion of the Confidential Information that Recipient is legally required to disclose.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">12. NOTICE OF IMMUNITY UNDER THE DEFEND TRADE SECRETS ACT</div>
+<p>Pursuant to 18 U.S.C. &sect; 1833(b), Recipient is hereby notified that an individual shall not be held criminally or civilly liable under any federal or state trade secret law for the disclosure of a trade secret that: (i) is made in confidence to a federal, state, or local government official, either directly or indirectly, or to an attorney, and is made solely for the purpose of reporting or investigating a suspected violation of law; or (ii) is made in a complaint or other document filed in a lawsuit or other proceeding, if such filing is made under seal. An individual who files a lawsuit alleging retaliation by an employer for reporting a suspected violation of law may disclose the trade secret to the individual's attorney and use the trade secret information in the court proceeding, provided that the individual files any document containing the trade secret under seal and does not disclose the trade secret except pursuant to court order.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">13. GOVERNING LAW AND VENUE</div>
+<p>This Agreement shall be governed by and construed in accordance with the laws of the State of Texas, without giving effect to any choice or conflict of law provision or rule. The Parties consent to the exclusive jurisdiction and venue of the state and federal courts located in Dallas County, Texas for any action arising out of or relating to this Agreement, and waive any objection to such jurisdiction or venue based on inconvenient forum or any other ground. The Parties acknowledge that this choice of law and venue applies regardless of Recipient's place of residence at the time of dispute and shall continue to apply if Pulse expands operations beyond Texas.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">14. SEVERABILITY</div>
+<p>If any provision of this Agreement is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable, and the remaining provisions of this Agreement shall continue in full force and effect.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">15. ENTIRE AGREEMENT; MODIFICATION</div>
+<p>This Agreement constitutes the entire agreement between the Parties with respect to its subject matter and supersedes all prior or contemporaneous understandings, agreements, negotiations, representations, and warranties, both written and oral, with respect to such subject matter. This Agreement may be modified only by a written instrument signed by both Parties.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">16. COUNTERPARTS; ELECTRONIC SIGNATURES</div>
+<p>This Agreement may be executed in counterparts, each of which shall be deemed an original and all of which together shall constitute one and the same instrument. Signatures delivered by electronic transmission, including via DocuSign, scanned PDF, or email, shall have the same force and effect as original signatures.</p>
+</div>
+
+<div class="legal-clause">
+<div class="legal-clause-title">17. ACKNOWLEDGMENT</div>
+<p>Recipient acknowledges that Recipient has read this Agreement, has had the opportunity to consult with independent legal counsel of Recipient's choosing, understands the obligations imposed by this Agreement, and enters into this Agreement freely and voluntarily.</p>
+</div>
+
+<div class="divider"></div>
+
+<h2>Signatures</h2>
+<p>IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.</p>
+
+<div class="card-block" style="margin-top: 32px;">
+  <div class="card-block-title">PULSE, INC.</div>
+  <p>By: _______________________________________</p>
+  <p>Name: Erika ____________________________________</p>
+  <p>Title: Founder</p>
+  <p>Date: ________________________________________</p>
+</div>
+
+<div class="card-block">
+  <div class="card-block-title">RECIPIENT</div>
+  <p>Signature: _______________________________________</p>
+  <p>Printed Name: ____________________________________</p>
+  <p>Date: ________________________________________</p>
+</div>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

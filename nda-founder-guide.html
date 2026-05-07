@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · NDA Founder&#x27;s Guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Gate check: redirect to hub if not unlocked -->
+<script>
+(function() {
+  // Check if user unlocked via the hub. If not, redirect home.
+  // Reads from localStorage (set by the hub gate on successful unlock).
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      // Not unlocked — show locked message + link back to hub
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) { /* storage unavailable, fail open */ }
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Confidentiality</div>
+    <h1 class="doc-title">NDA Founder&#x27;s Guide</h1>
+    <p class="doc-subtitle">Annotated commentary and onboarding walkthrough script for the Pulse Team NDA. Founder reference only.</p>
+    <div class="doc-meta">Persona memo &middot; For founder use only</div>
+  </div>
+
+  
+<p class="lede">Annotated commentary and onboarding script for the Pulse Team Confidentiality Agreement &mdash; for founder use only.</p>
+
+<h2>Memorandum</h2>
+<table>
+<tr><td style="width: 90px;"><strong>TO:</strong></td><td>Erika, Founder &mdash; Pulse, Inc.</td></tr>
+<tr><td><strong>FROM:</strong></td><td>Senior IP Counsel &middot; Tech Practice &middot; Texas Bar &middot; 30+ Years</td></tr>
+<tr><td><strong>RE:</strong></td><td>Pulse Team Confidentiality Agreement &mdash; Annotated for the Founder</td></tr>
+</table>
+
+<p><strong>Erika &mdash;</strong></p>
+<p>After thirty years doing this work &mdash; most of it sitting across from founders in exactly your spot, often after they should have called me earlier &mdash; let me tell you what I've learned about NDAs.</p>
+<p>Most of them are paper tigers. They sound intimidating, they get signed, and then six months later when something has actually leaked, the founder discovers what they signed wouldn't survive thirty seconds of cross-examination. The big Silicon Valley firms charge fifteen hundred an hour to write the same boilerplate everyone else writes. What makes an NDA actually work isn't fancy language. It's specificity, the right state law, and three remedies clauses that ninety percent of NDAs get wrong.</p>
+<p><strong>Here is what I want you to understand about the agreement that follows.</strong></p>
+
+<h3>1. The biggest threat is not malicious. It's casual.</h3>
+<p>In thirty years I have seen exactly one case where a team member intentionally sold confidential information to a competitor. I have seen many dozens of cases where someone showed their spouse "this cool thing I'm working on," the spouse mentioned it at a dinner party, and three drinks in someone at that party knew someone at a competitor. Six months later the competitor "independently" arrived at the same idea and you couldn't prove a damn thing.</p>
+<p>The agreement is drafted to take the casual-breach excuse off the table. Section 4 specifically prohibits sharing with family, household members, friends, and acquaintances. It also prohibits discussing the work in restaurants, ride-shares, and gyms. When team members read that, they pause before they share. That pause is ninety percent of the value of an NDA. Court enforcement is the other ten.</p>
+
+<h3>2. Texas governing law is non-negotiable.</h3>
+<p>California is hostile to NDA enforcement in ways that startup founders almost never appreciate until they're standing in a California courtroom. Texas is the opposite. Texas courts will enforce a properly drafted NDA, will grant injunctions, and will award attorney's fees under Texas Civil Practice and Remedies Code Chapter 38.</p>
+<p>Section 13 of the agreement establishes Texas governing law and Dallas County venue. Crucially, it states this applies regardless of where Recipient lives at the time of dispute. So when Pulse expands and you hire someone in Los Angeles or New York, this clause keeps you in your home court. That is not a small thing. That is the difference between winning and not winning.</p>
+
+<h3>3. The Texas Uniform Trade Secrets Act needs reasonable measures.</h3>
+<p>Texas adopted its version of the Uniform Trade Secrets Act in 2013 and amended it in 2017. It is now codified at Texas Civil Practice and Remedies Code sections 134A.001 through 134A.008. Under TUTSA, your information only qualifies as a trade secret if you take "reasonable measures" to protect it.</p>
+<p>Note this carefully. If you do not have NDAs in place, your financial models, vendor lists, and product roadmap may not qualify as trade secrets at all under Texas law. They become regular confidential information at best, and unprotected business information at worst. The agreement itself is your reasonable measure. Section 5 explicitly invokes this.</p>
+<p>One nuance worth knowing: Texas, unlike federal law, expressly includes "lists of actual or potential customers or suppliers" in the trade secret definition. For Pulse, this matters. Your vendor list, your prospect list, your investor conversations &mdash; these are all protectable as Texas trade secrets in a way they may not be under federal law. We've drafted Section 1 to capture this.</p>
+
+<h3>4. The DTSA whistleblower notice is required, and it has teeth.</h3>
+<p>Section 12 of the agreement contains the federal whistleblower-immunity notice required under 18 U.S.C. &sect; 1833(b)(3)(A). I have seen sophisticated companies forfeit hundreds of thousands of dollars in attorney's fees and exemplary damages because their NDAs lacked this notice. Without it, you cannot recover those amounts in any federal trade secret case under the Defend Trade Secrets Act. The language has to be substantially as written. Don't let anyone shorten it.</p>
+
+<h3>5. The remedies clause is where most NDAs fail.</h3>
+<p>Section 9 contains three things that ninety percent of template NDAs miss:</p>
+<p>First, an explicit acknowledgment that breach causes irreparable harm and that money damages are inadequate. Without this, you have to prove irreparable harm at the start of the case, which is expensive and uncertain. With this, the court takes it as agreed.</p>
+<p>Second, the right to seek injunctive relief without bond. Bond requirements can run into the tens of thousands. We're cutting that off.</p>
+<p>Third, attorney's fees recovery for the prevailing party under Texas Civil Practice and Remedies Code Chapter 38, plus federal authority. This is what makes the agreement actually deterrent. Without fee recovery, the cost of enforcement often exceeds the cost of the breach. With it, defendants think twice.</p>
+
+<h3>6. How to use this with your team.</h3>
+<p>Don't hand this to a team member with "sign this please." Walk them through it. The walkthrough is what makes it stick. The annotated commentary that follows is your script. Twenty minutes, sit down with them, walk through the major clauses, explain why each is there. People who understand what they're signing behave differently from people who just sign. That's the whole game.</p>
+<p>Then sign. Use DocuSign or its equivalent. The agreement allows electronic signatures. Keep signed copies in a folder you control. Keep a tracking spreadsheet so you know who has signed and when. When someone leaves the team, you have the document and the date.</p>
+
+<h3>7. What this is not.</h3>
+<p>Two things this agreement is not. First, it is not a non-compete. Texas allows reasonable non-competes under Texas Business and Commerce Code section 15.50, but that's a different conversation. If you want to restrict where former team members can work, we draft that separately and it has its own rules around scope, duration, and geography. Most early-stage startups don't need it. Pulse may eventually.</p>
+<p>Second, it is not a substitute for actual security practices. The agreement gives you legal recourse after a breach. It doesn't prevent the breach. Combine this with sensible practices: don't share Drive folders broadly when you can share specifically, use access logs, lock down the financial model. The agreement is the legal layer. Operations is the prevention layer. You need both.</p>
+
+<h3>Final note.</h3>
+<p>Have a real attorney in Texas review this before you put it in front of your team. I've drafted it carefully and it incorporates current Texas and federal law as of 2026, but every situation has wrinkles. A thirty-minute review by a Texas IP attorney will catch anything specific to your situation &mdash; cap-table considerations, IP assignment overlap, whether you need separate work-product agreements for technical contributors. Budget three to six hundred dollars for that review. It will be the cheapest legal money you spend this year.</p>
+
+<p style="font-style: italic; color: var(--ink-faint); margin-top: 32px;">&mdash; Senior IP Counsel<br><span style="font-size: 12px;">[Persona Draft]</span></p>
+
+<div class="divider"></div>
+
+<h2>Onboarding Walkthrough</h2>
+<p>A short script for walking a new team member through the agreement. Twenty minutes. The walkthrough is what makes the agreement stick.</p>
+
+<h3>Before the meeting</h3>
+<p>Send the agreement 24&ndash;48 hours in advance. People take it more seriously when they've had time to read it themselves. Include a short note: "Here's the team confidentiality agreement we ask everyone to sign. Read it before our meeting and bring questions."</p>
+
+<h3>During the meeting (~20 minutes)</h3>
+<p><strong>1. Open with the why (2 minutes).</strong> Pulse is pre-launch. Vendor lists, financial models, and research are competitive advantage. The agreement is how we protect that advantage. Everyone signs the same one. It applies to you, to me, to our advisors.</p>
+<p><strong>2. Walk through the four clauses that matter most (10 minutes):</strong></p>
+<ul>
+<li><strong>Section 1 (Confidential Information)</strong> &mdash; "Here's what we're protecting." Read the list aloud. Acknowledge that some items will surprise them.</li>
+<li><strong>Section 4 (Non-Disclosure)</strong> &mdash; "This is the practical restriction. Don't share with family. Don't discuss in coffee shops. Don't screenshot." Be direct.</li>
+<li><strong>Section 9 (Remedies)</strong> &mdash; "If there's a breach, the consequences are real. Injunction, damages, attorney's fees. We don't expect to use this. We need it to exist."</li>
+<li><strong>Section 12 (DTSA Notice)</strong> &mdash; "Federal law requires us to tell you that you have the right to report illegal conduct to the government or your lawyer. We support that right."</li>
+</ul>
+<p><strong>3. Invite questions (5 minutes).</strong> Most people don't have any. The few who do usually ask about "casual" scenarios &mdash; "can I tell my spouse what I'm working on at a high level?" Answer: not without prior conversation. We'd rather be specific than ambiguous.</p>
+<p><strong>4. Sign (3 minutes).</strong> DocuSign or wet signature. Provide an email confirmation when complete. File the signed copy in a folder you control.</p>
+
+<h3>Tracking</h3>
+<p>Maintain a simple spreadsheet:</p>
+<ul>
+<li>Name</li>
+<li>Role / engagement type</li>
+<li>Date signed</li>
+<li>Effective Date in the agreement</li>
+<li>Link to signed PDF</li>
+<li>End date (added when engagement ends)</li>
+<li>Return-of-materials confirmation (added when engagement ends)</li>
+</ul>
+<p>This sounds bureaucratic. It isn't &mdash; it's ten minutes of admin per person, and it's the difference between knowing who has access and not knowing.</p>
+
+<h3>When someone leaves</h3>
+<p>Within 48 hours of departure:</p>
+<ul>
+<li>Revoke all systems access (email, Drive, Notion, Slack, GitHub, Supabase, etc.).</li>
+<li>Send written request for return or destruction of Confidential Information per Section 7.</li>
+<li>Request the certification described in Section 7 within 30 days.</li>
+<li>Update tracking spreadsheet.</li>
+</ul>
+
+<h3>When to call an actual attorney</h3>
+<ul>
+<li>A team member negotiates changes you're unsure about.</li>
+<li>You suspect a breach. Don't wait. Time matters.</li>
+<li>You're hiring a senior person who has competing-employer issues.</li>
+<li>You're about to expand to a new state, particularly California.</li>
+<li>You're raising or selling, and the cap table or IP assignment becomes relevant.</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>Disclaimer</h2>
+<p><strong>This document is a template draft prepared in the persona of an experienced intellectual property attorney with Texas and federal trade secret experience. It is not legal advice and does not establish an attorney-client relationship.</strong></p>
+<p>The agreement and this commentary incorporate current Texas and federal law as of May 2026, including the Texas Uniform Trade Secrets Act (Tex. Civ. Prac. &amp; Rem. Code &sect;&sect; 134A.001&ndash;008), the federal Defend Trade Secrets Act (18 U.S.C. &sect;&sect; 1831 et seq., particularly 18 U.S.C. &sect; 1833(b)), and Texas Civil Practice and Remedies Code Chapter 38.</p>
+<p>Before using the agreement in production with team members, have it reviewed by a licensed Texas attorney. A 30&ndash;45 minute review by an IP or business attorney will catch any state-specific or situation-specific issues this template may not address. Budget $300&ndash;$600 for that review.</p>
+<p>Specific situations that require attorney review include: cap-table or equity considerations; IP assignment for technical contributors (a separate agreement is usually appropriate); engagements with team members residing in California or other restrictive jurisdictions; non-compete restrictions; and any material changes to the agreement's scope or terms.</p>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

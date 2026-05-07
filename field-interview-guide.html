@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Field Interview Guide</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+(function() {
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Research</div>
+    <h1 class="doc-title">Field Interview Guide</h1>
+    <p class="doc-subtitle">Branched man-on-the-street interview structure with persona-specific probes, the standardized concept pitch, and a validation triggers reference table.</p>
+    <div class="doc-meta">8 pages &middot; Discussion guide</div>
+  </div>
+
+  <p><em>Consumer Validation · Man-on-the-Street Interviews</em></p>
+<p><em>Companion to the Pulse Dallas Market Research Brief</em></p>
+<h2><strong>Interviewer Instructions</strong></h2>
+<h3><strong>Purpose</strong></h3>
+<p>This guide structures 10–20 minute conversations with potential Pulse users. Each interview is a chance to confirm or disprove a specific hypothesis from the Market Research Brief. The questions are designed to surface authentic discovery behavior, not to sell Pulse.</p>
+<p><em>Interviewees should leave the conversation feeling listened to, not pitched. The goal is signal, not buy-in.</em></p>
+<h3><strong>Logistics</strong></h3>
+<p>Length: 10–20 minutes per conversation.</p>
+<p>Locations: Klyde Warren Park (mixed demographics, midday/evening), Bishop Arts Saturday foot traffic, Katy Trail (active users, dog owners), NorthPark Center (parents, broader demos), Deep Ellum on a Friday or Saturday evening (younger crowds).</p>
+<p>Target: 10–15 conversations across the four primary segments. Aim for a minimum of 2 per segment.</p>
+<p>Recording: Ask permission. If granted, record audio for sizzle-reel quotes. If declined, take written notes.</p>
+<p>Compensation: Offer a $10 gift card or coffee in exchange for participation. Most people will say no — always offer.</p>
+<h3><strong>How to use this document</strong></h3>
+<p>Each section maps to a specific validation trigger in §9 of the Market Research Brief. Sidebar notes flag what to listen for. Branch logic indicates which questions to ask based on screening responses — do not ask all questions of all interviewees.</p>
+<p>If a section doesn’t apply (e.g., Section 4.2 if the interviewee has no children), skip it. Total core questions: 12. Total possible questions including branched probes: 22.</p>
+<h3><strong>Things to listen for (general)</strong></h3>
+<p>Frustration that surfaces unprompted is more valuable than frustration that requires probing.</p>
+<p>Specific tools named (“I use Beli for restaurants, IG for nightlife, Yelp for dog-friendly”) reveal current discovery stack.</p>
+<p>Quotes about emotion, not just process — “I hate when…”, “I wish there was…”, “I just give up and order in.” These are sizzle-reel material.</p>
+<p>Disconfirmations are findings. If 5 of 10 interviewees say they’re happy with Google Maps and don’t feel a gap, that is a meaningful result.</p>
+<h2><strong>Section 1. Warm-Up &amp; Screening</strong></h2>
+<p><em>Time: 2–3 min</em></p>
+<p>Establish rapport, gather basic demographics, and identify which persona track to follow.</p>
+<p><strong>Q1.1 — “Tell me a little about yourself — do you live in Dallas?”</strong></p>
+<p><em>Listen for neighborhood, length of residence, and whether they’re a visitor. Visitors get the Section 5 visitor branch.</em></p>
+<p><strong>Q1.2 — “Roughly how often do you go out — restaurants, bars, coffee, beauty appointments, events, that kind of thing?”</strong></p>
+<p><em>Looking for frequency. “Multiple times a week” and “once a week” are core users. “Once a month or less” suggests a low-frequency segment that’s harder to monetize.</em></p>
+<p><strong>Q1.3 — “Do you live with anyone? Kids, partner, dog, roommates?”</strong></p>
+<p><em>This identifies which segment branches apply. Note their answer — you’ll want it later.</em></p>
+<h2><strong>Section 2. Discovery Behavior Today</strong></h2>
+<p><em>Time: 3–5 min · Maps to §9.3 (Behavior triggers)</em></p>
+<p><strong>Q2.1 — “When you want to try somewhere new, walk me through what you actually do. Not what you should do — what do you actually do?”</strong></p>
+<p><em>This is the most important question in the guide. Don’t accept “I just Google it” — probe for the actual sequence. (“What do you Google? Then what?”)</em></p>
+<p><em>Listen for: Google Maps, Yelp, Instagram, TikTok, friends, group chat, Beli, The Infatuation, Reddit, Eater, Resy.</em></p>
+<p><strong>Q2.2 — “How many actually-new places have you tried in the last month?”</strong></p>
+<p><em>Numeric answer. &lt;2/month is low frequency, 3–5 is core, 6+ is power user.</em></p>
+<p><strong>Q2.3 — “What’s a recent time you couldn’t find what you were looking for? Or you tried somewhere and it sucked?”</strong></p>
+<p><em>Pain points emerge here. Quotes from this question are gold.</em></p>
+<h2><strong>Section 3. The Real-Time Premise</strong></h2>
+<p><em>Time: 2–3 min · Maps to §9.3 (Q11/Q12 triggers)</em></p>
+<p><strong>Q3.1 — “How much does ‘right now’ matter when you’re picking somewhere? Like, is it busy now, is there a wait, is there a happy hour going on?”</strong></p>
+<p><em>Validates the real-time premise. If they shrug, the real-time positioning is weaker than assumed. If they light up, it’s confirmed.</em></p>
+<p><strong>Q3.2 — “If there was a way to see what was popping in Dallas right now — places filling up, places running offers tonight, things you’d miss otherwise — would you actually use that?”</strong></p>
+<p><em>This is the closest to a Pulse pitch. Don’t lead with brand. Listen to the qualifier in their answer — “yeah, if it actually worked” vs “maybe” vs “probably not.”</em></p>
+<h2><strong>Section 4. Persona-Specific Probes</strong></h2>
+<p><em>Time: 3–7 min · Maps to §9.1 (Persona triggers). Branch by interviewee profile from Q1.3.</em></p>
+<h3><strong>4.1 If young professional, no kids, no dog (or dog left at home)</strong></h3>
+<p><strong>Q4.1.a — “When you’re going out with friends, who picks the place? How does that decision actually happen?”</strong></p>
+<p><em>Listen for group-chat dynamics, who gets veto power, and what makes a place “safe” to suggest.</em></p>
+<p><strong>Q4.1.b — “Have you ever shown up somewhere and immediately wished you’d gone somewhere else? What happened?”</strong></p>
+<p><em>Crowd-fit, vibe, busy/empty mismatch. These are all real-time problems Pulse can solve.</em></p>
+<h3><strong>4.2 If parent (kids under 18 in household)</strong></h3>
+<p><em>Hypothesis: Elevated parents are underserved. Validation question: do they actually feel the pain, or have private networks already solved it?</em></p>
+<p><strong>Q4.2.a — “When you go out with the kids, what kills a place for you? What do you wish was easier to figure out before you got there?”</strong></p>
+<p><strong>Q4.2.b — “Do you ever feel like you’re downgrading to be ‘kid-friendly’? What does that mean to you?”</strong></p>
+<p><em>This is the Migoni quote validation. If parents agree they’re downgrading, the elevated-parent segment is real.</em></p>
+<p><strong>Q4.2.c — “How do you currently find spots that work — mom groups, friends, Instagram, something else?”</strong></p>
+<p><em>If they have a strong private network solution, that’s a disconfirmation signal.</em></p>
+<h3><strong>4.3 If dog owner (and takes dog out at least sometimes)</strong></h3>
+<p><strong>Q4.3.a — “How often do you take your dog with you somewhere — a patio, a coffee shop, an event?”</strong></p>
+<p><strong>Q4.3.b — “How do you figure out where you can take them?”</strong></p>
+<p><em>BringFido, Google Maps photos (looking for dog photos in reviews), word of mouth, Dallasites101, etc.</em></p>
+<p><strong>Q4.3.c — “Has there been a time you skipped going somewhere because you couldn’t bring the dog and didn’t feel like leaving them?”</strong></p>
+<p><em>If yes, dog-compatibility kills demand — a strong validation signal.</em></p>
+<h3><strong>4.4 If wellness-engaged (mentioned spa, gym, beauty in Q1.2)</strong></h3>
+<p><strong>Q4.4.a — “When you book a new beauty or wellness spot — a new salon, a new yoga studio, a new spa — how do you decide?”</strong></p>
+<p><strong>Q4.4.b — “How often do you actually try somewhere new vs sticking with your regulars?”</strong></p>
+<p><em>If they’re loyal-only and rarely try new, the wellness-discovery use case is weaker. If they actively explore, it’s confirmed.</em></p>
+<h3><strong>4.5 If visitor (lives outside Dallas)</strong></h3>
+<p><strong>Q4.5.a — “What brought you to Dallas? How long are you here?”</strong></p>
+<p><strong>Q4.5.b — “How are you figuring out where to eat / drink / spend your free time while you’re here?”</strong></p>
+<p><strong>Q4.5.c — “Would you have downloaded an app for this trip? What would have made you?”</strong></p>
+<p><em>Visitor download intent is hard to fake — they’ll either feel the friction or not.</em></p>
+<h2><strong>Section 5. Filter Testing</strong></h2>
+<p><em>Time: 3–4 min · Maps to §9.2 (Filter triggers)</em></p>
+<p>Read the filter list aloud. Ask the interviewee to identify which would actually change their behavior. The bathroom filter is intentionally listed alongside the others to avoid biasing the response.</p>
+<p><strong>Q5.1 — “If I told you a discovery app could filter for any of these, which would actually change where you went?”</strong></p>
+<p>Read this list slowly:</p>
+<p>Vibe / aesthetic</p>
+<p>Crowd fit (right age, right energy)</p>
+<p>Trending right now</p>
+<p>Walkable / parking available</p>
+<p>Dog-friendly</p>
+<p>Kid-friendly</p>
+<p>Clean restrooms</p>
+<p>Reservation availability tonight</p>
+<p>Quiet enough to talk</p>
+<p>Open late</p>
+<p>Live offer or discount</p>
+<p>Accessibility (mobility, sensory)</p>
+<p><em>Listen for which filter the interviewee elaborates on unprompted. The bathroom filter, in particular, often gets a strong reaction one way or the other — capture exact quotes.</em></p>
+<p><strong>Q5.2 — “Is there a filter I didn’t mention that would matter to you?”</strong></p>
+<p><em>Open-ended discovery. Anything mentioned by 3+ interviewees becomes a v1 feature candidate.</em></p>
+<h2><strong>Section 6. Concept Reaction (Soft Pitch)</strong></h2>
+<p><em>Time: 2–3 min · Maps to §9.3 (Q15)</em></p>
+<p>Now — and only now — describe Pulse briefly. Use this exact framing or close to it:</p>
+<p><em>“There’s an app being built called Pulse, just for Dallas. It shows what’s actually trending right now — across food, drink, beauty, wellness, things to do — personalized to your preferences. Vendors can post live offers. It’s free for users.”</em><em>   — Standardized concept pitch</em></p>
+<p><strong>Q6.1 — “On a scale of 1–5, how likely are you to try something like that?”</strong></p>
+<p><em>≥4 across most segments validates the concept. ≤3 average disconfirms.</em></p>
+<p><strong>Q6.2 — “What would make you actually keep using it after the first week?”</strong></p>
+<p><em>This is the retention question. Listen for what they’d need to see to come back.</em></p>
+<p><strong>Q6.3 — “Who do you know who’d love it? Who’d hate it?”</strong></p>
+<p><em>Network effect read. If they instantly name 3 friends, you have viral seed. If they shrug, the concept doesn’t feel shareable yet.</em></p>
+<h2><strong>Section 7. Wrap-Up &amp; Sizzle</strong></h2>
+<p><em>Time: 1–2 min</em></p>
+<p><strong>Q7.1 — “If this app existed and worked exactly the way you’re imagining, what would you tell a friend about it?”</strong></p>
+<p><em>This is the on-camera-quote question. The answer becomes investor deck material if it’s good. Always ask permission to attribute (first name + neighborhood is plenty).</em></p>
+<p><strong>Q7.2 — “Last thing — anything I didn’t ask that I should have?”</strong></p>
+<p><em>The best insights often come in the final two minutes when the interviewee feels relaxed.</em></p>
+<p>Thank them. Hand them a card or a way to follow Pulse if they want updates. Note their first name, neighborhood, segment, and any standout quotes immediately after the conversation ends — memory degrades fast.</p>
+<h2><strong>Validation Triggers Reference</strong></h2>
+<p>Cross-reference each interview against these triggers from §9 of the Market Research Brief. After 10–15 interviews, score each segment confirmed / disconfirmed / inconclusive.</p>
+<p><em>Each interview should produce 3–5 specific quotes captured verbatim, segment classification, and trigger-by-trigger notes. Synthesize after every 5 interviews — don’t wait for all 15 before reviewing.</em></p>
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

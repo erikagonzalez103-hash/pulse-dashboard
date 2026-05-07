@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -833,7 +833,7 @@
   // Quick way: open browser console, paste:
   //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR-NEW-PASSWORD'))
   //     .then(b => console.log(Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')));
-  const PASSWORD_HASH = 'a5a9bf4b64f8e27dd579bc967ce96f9d52edd465db0cd212e9ace61538f1ed64';
+  const PASSWORD_HASH = '6e25884750ff419e616859f09318fa1bb505d79c5f3c53c48a810a59a7f068f2';
   const TOKEN_KEY = 'pulse_team_unlocked_v1';
 
   async function sha256(text) {
@@ -845,7 +845,8 @@
 
   // Already unlocked this session?
   try {
-    if (sessionStorage.getItem(TOKEN_KEY) === PASSWORD_HASH) {
+    if (sessionStorage.getItem(TOKEN_KEY) === PASSWORD_HASH ||
+        localStorage.getItem(TOKEN_KEY) === PASSWORD_HASH) {
       gate.remove();
       return;
     }
@@ -864,7 +865,10 @@
     if (!pw) { err.textContent = 'Please enter the password.'; return; }
     const hash = await sha256(pw);
     if (hash === PASSWORD_HASH) {
-      try { sessionStorage.setItem(TOKEN_KEY, hash); } catch (e) { /* ignore */ }
+      try {
+        sessionStorage.setItem(TOKEN_KEY, hash);
+        localStorage.setItem(TOKEN_KEY, hash);  // also persists for doc pages opened in new tabs
+      } catch (e) { /* ignore */ }
       gate.style.opacity = '0';
       gate.style.transition = 'opacity 0.4s';
       setTimeout(() => {
@@ -974,7 +978,7 @@
       <div class="card-title">Market Research Brief</div>
       <div class="card-meta">24 pages · Pre-validation reference</div>
       <div class="card-desc">Comprehensive Dallas market analysis: demographics, vendor base, discovery ecosystem, four audience segments, neighborhood map, competitive positioning, large-event strategy, validation plan.</div>
-      <a href="Pulse_Dallas_Market_Research_Brief.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/market-research-brief.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -982,7 +986,7 @@
       <div class="card-title">Field Interview Guide</div>
       <div class="card-meta">8 pages · Discussion guide</div>
       <div class="card-desc">Branched man-on-the-street interview structure with persona-specific probes, the standardized concept pitch, and a validation triggers reference table.</div>
-      <a href="Pulse_Field_Interview_Guide.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/field-interview-guide.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -990,7 +994,7 @@
       <div class="card-title">Survey Distribution Plan</div>
       <div class="card-meta">12 pages · Meta + organic</div>
       <div class="card-desc">Operational plan: campaign architecture, three ad sets, four creative variants, budget pacing, the 70% organic playbook, UTM scheme, optimization rules, and definition-of-done.</div>
-      <a href="Pulse_Survey_Distribution_Plan.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/survey-distribution-plan.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -998,7 +1002,7 @@
       <div class="card-title">4-Week Research Timeline</div>
       <div class="card-meta">2 pages landscape · Wall reference</div>
       <div class="card-desc">Swim-lane visualization across four research tracks (survey, vendors, field, synthesis) with daily milestones, four decision checkpoints, and end-of-week-4 success criteria.</div>
-      <a href="Pulse_4Week_Research_Timeline.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/research-timeline.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1017,7 +1021,7 @@
       <div class="card-title">Audience Personas</div>
       <div class="card-meta">1 page landscape · Investor-ready</div>
       <div class="card-desc">Four primary segments — The Insider (young professional), The Elevated Parent, The Dog-Forward, The Visitor — with key stat, neighborhood density, pain quote, why-Pulse argument, and validation status.</div>
-      <a href="Pulse_Audience_Personas.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/personas.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -1025,7 +1029,7 @@
       <div class="card-title">30-Second Pitch Kit</div>
       <div class="card-meta">3 pages · Team reference</div>
       <div class="card-desc">The 30-second pitch, two alternates (investor-formal and casual), four anchor phrases, "When they ask, you say" Q&amp;A for natural follow-ups, and DO/DON'T delivery notes.</div>
-      <a href="Pulse_30_Second_Pitch.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/pitch.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1044,7 +1048,7 @@
       <div class="card-title">Investor Sheet</div>
       <div class="card-meta">1 page PDF · Leave-behind</div>
       <div class="card-desc">Category, problem, defensibility, milestone target. Designed for the post-meeting follow-up email or the 60-second hand-off.</div>
-      <a href="Pulse_Investor_1_Pager.pdf" class="card-link">View PDF <span class="card-arrow">→</span></a>
+      <a href="docs/investor-1pager.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -1052,7 +1056,7 @@
       <div class="card-title">Investor Talking Points</div>
       <div class="card-meta">Reference doc · Founder script</div>
       <div class="card-desc">3-minute narrative for financial/tech investors, momentum definitions, anticipated questions with answers (defensibility, CAC/LTV, scale, why-not-Yelp), pricing model walkthrough, ask structure.</div>
-      <a href="Pulse_Investor_Talking_Points.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/investor-talking-points.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1071,7 +1075,7 @@
       <div class="card-title">Team Confidentiality Agreement</div>
       <div class="card-meta">7 pages · Texas-governed · DTSA-compliant</div>
       <div class="card-desc">The signable NDA. Defines confidential information, prohibits family/casual sharing specifically, mandates injunctive relief without bond, allows attorney&rsquo;s fees recovery under Texas CPRC Ch. 38, and includes the federal whistleblower notice required by 18 U.S.C. § 1833(b).</div>
-      <a href="Pulse_Team_NDA.docx" class="card-link">Download <span class="card-arrow">→</span></a>
+      <a href="docs/team-nda.html" target="_blank" rel="noopener" class="card-link">Open <span class="card-arrow">→</span></a>
     </div>
 
     <div class="card">
@@ -1079,7 +1083,7 @@
       <div class="card-title">NDA Founder&rsquo;s Guide</div>
       <div class="card-meta">10 pages · Annotated commentary · For founder use only</div>
       <div class="card-desc">Cover memo from senior IP counsel persona. Clause-by-clause commentary explaining why each provision matters. 20-minute onboarding walkthrough script. Tracking and offboarding procedures. Use this when walking team members through the NDA.</div>
-      <a href="Pulse_NDA_Founder_Guide.docx" class="card-link secondary">Download <span class="card-arrow">→</span></a>
+      <a href="docs/nda-founder-guide.html" target="_blank" rel="noopener" class="card-link secondary">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 
@@ -1284,7 +1288,7 @@
       <div class="card-title">4-Week Research Timeline</div>
       <div class="card-meta">2 pages landscape · Wall reference</div>
       <div class="card-desc">Granular daily plan for weeks 1–4 (research phase only). Swim-lane visualization, decision checkpoints, and definition of done.</div>
-      <a href="Pulse_4Week_Research_Timeline.docx" class="card-link secondary">Download <span class="card-arrow">→</span></a>
+      <a href="docs/research-timeline.html" target="_blank" rel="noopener" class="card-link secondary">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1311,7 +1315,7 @@
       <div class="card-title">Financial Model (xlsx)</div>
       <div class="card-meta">4 sheets + corrections log</div>
       <div class="card-desc">Assumptions dashboard, break-even model, 12-month projection, scenario comparison. Six formula bugs corrected (see Corrections Log tab); LTV:CAC now correctly shows 8.96x.</div>
-      <a href="Pulse_Financial_Model.xlsx" class="card-link secondary">Download <span class="card-arrow">→</span></a>
+      <a href="financial-model.html" target="_blank" rel="noopener" class="card-link secondary">Open <span class="card-arrow">→</span></a>
     </div>
   </div>
 </section>

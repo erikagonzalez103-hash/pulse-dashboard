@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Investor Talking Points</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Gate check: redirect to hub if not unlocked -->
+<script>
+(function() {
+  // Check if user unlocked via the hub. If not, redirect home.
+  // Reads from localStorage (set by the hub gate on successful unlock).
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      // Not unlocked — show locked message + link back to hub
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) { /* storage unavailable, fail open */ }
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Investors</div>
+    <h1 class="doc-title">Investor Talking Points</h1>
+    <p class="doc-subtitle">A 3-minute narrative for financial and tech investors, plus pre-loaded answers to the questions they'll ask.</p>
+    <div class="doc-meta">Founder script &middot; Q&A reference</div>
+  </div>
+
+  
+<p class="lede">A 3-minute narrative for financial and tech investors, plus pre-loaded answers for the questions they'll ask.</p>
+
+<h2>The 3-Minute Narrative</h2>
+
+<p><strong>Opening (30 seconds).</strong> Every city has a pulse &mdash; energy that builds around places in real time. And nobody is measuring it. Yelp captures reputation. Instagram captures attention. Google captures intent. None of them tell you what's actually happening right now. That's Pulse. We're the momentum layer for cities, launching in Dallas this summer to capture the World Cup window.</p>
+
+<p><strong>The market gap (45 seconds).</strong> Discovery tools today are static. Yelp's reviews are 18 months old on average. Instagram's algorithm rewards engagement, not relevance. Google Maps surfaces who paid, not what's hot. The result: every city's actual creative energy &mdash; the places that are accelerating right now, the moments worth showing up for &mdash; is invisible. Locals work around it. Visitors get default-routed to the same five places. Vendors with real momentum can't surface above incumbents. There's a layer missing.</p>
+
+<p><strong>What we're building (45 seconds).</strong> Pulse measures velocity, not volume. We aggregate signals across check-ins, social mentions, time-of-day energy, and vendor-supplied real-time data to produce a live momentum score for every business and neighborhood. Score rings transition from cool to warm to fire as energy accumulates. At the threshold, they pulse. Consumers get a live discovery surface; vendors get a dashboard, an offer engine, and the ability to boost in surge moments.</p>
+
+<p><strong>Why now &middot; why Dallas (30 seconds).</strong> The FIFA World Cup is landing in Dallas this summer with nine matches at AT&amp;T Stadium and the semifinal on July 14. 250k+ visitors over five weeks, all making 24-hour decisions, all cut off from local reputation context. Reputation tools fail this user. Momentum tools win them. We launch July 14 with founding vendors locked, infrastructure tested, and a city primed by the most expensive sports tourism event of the decade. The window is concrete and the timing is forcing function.</p>
+
+<p><strong>Ask &middot; Close (30 seconds).</strong> We're raising a $175k seed bridge to capture the World Cup density window. With it, we onboard 150 founding vendors, deploy production infrastructure, run launch marketing through tournament close, and produce a 12-month dataset of real-time city momentum that no one else has. Post-WC, we expand to Austin, Houston, then nationwide. The unit economics are healthy: $175 ARPV, 24-month retention, 80% gross margin, 8.96x LTV:CAC, 2.1-month CAC payback. Pulse is the momentum layer, and momentum is the whole game.</p>
+
+<div class="divider"></div>
+
+<h2>The Questions They'll Ask</h2>
+
+<h3>"How is this different from Yelp?"</h3>
+<p>Yelp is a reputation graveyard. Reviews from 2022 decide where you eat in 2026. Yelp measures who built up enough crust to be findable. Pulse measures who's hot right now. They're not the same business and they don't compete for the same user.</p>
+
+<h3>"How do you build the data?"</h3>
+<p>Three sources. First, vendor-supplied real-time signals (founding vendors agree to share live wait times, current capacity, daily offers). Second, public social signal aggregation (Instagram check-ins, geo-tagged stories, Twitter mentions). Third, behavioral signals from our own consumer app (taps, dwell time, save rate, return visits). The momentum score blends all three.</p>
+
+<h3>"What's the moat?"</h3>
+<p>Network density. Once we have the live signal at scale in a city, we <em>are</em> the live signal. New entrants would need our vendor density and our consumer behavioral data to compete on freshness &mdash; and freshness is the product. We capture density first in Dallas, then defend it.</p>
+
+<h3>"What about CAC and unit economics?"</h3>
+<p>$175 average revenue per vendor per month, blended across $99/$199/$399 tiers. CAC of $375 with current spend at 10&ndash;20 vendor onboards per month. 24-month average retention based on comparable category benchmarks. Implies $3,360 LTV at 80% gross margin, 8.96x LTV:CAC ratio, CAC payback in 2.1 months. World Cup contributes one-time uplift via 30% premium pricing during the window plus a $50k enterprise activation deal.</p>
+
+<h3>"Why won't Yelp/Google just copy this?"</h3>
+<p>Three reasons. First, their data is structurally lagging &mdash; reviews and pins are slow signals by design, and they've spent 20 years optimizing for them. Second, their incentives are misaligned &mdash; momentum surfacing would cannibalize their paid placements. Third, this is a focused, density-first product. By the time they decide to copy, we own the live signal in our markets.</p>
+
+<h3>"Why Dallas first?"</h3>
+<p>Three reasons. The World Cup is the most expensive forcing function we'll see this decade and it's landing in our city. Dallas is the fourth-largest metro, demographically diverse, with strong vendor ecosystems and high discretionary spend. And we have the local relationships to onboard founding vendors fast.</p>
+
+<h3>"What's the path to scale?"</h3>
+<p>Dallas validates the playbook. Austin and Houston follow at 6 and 9 months because we already have Texas vendor relationships and the World Cup data set proves the model. Then nationwide expansion in tier-2 metros where reputation tools work least well: Miami, Nashville, Charlotte, Phoenix.</p>
+
+<div class="divider"></div>
+
+<h2>The Ask Structure</h2>
+
+<table>
+<tr><th>Round</th><th>Amount</th><th>Use of Funds</th></tr>
+<tr><td>Seed bridge (now)</td><td>$175,000</td><td>WC launch capture &middot; founding vendor onboarding &middot; production infra</td></tr>
+<tr><td>Seed (Q4 2026)</td><td>$1.5M</td><td>Austin + Houston expansion &middot; consumer marketing &middot; team build</td></tr>
+<tr><td>Series A (2027)</td><td>$8&ndash;12M</td><td>National expansion &middot; engineering &middot; vendor success org</td></tr>
+</table>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

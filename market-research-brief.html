@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Dallas Market Research Brief</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+(function() {
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Research</div>
+    <h1 class="doc-title">Dallas Market Research Brief</h1>
+    <p class="doc-subtitle">Comprehensive Dallas market analysis: demographics, vendor base, discovery ecosystem, four audience segments, neighborhood map, competitive positioning, large-event strategy, and validation plan.</p>
+    <div class="doc-meta">24 pages &middot; Pre-validation reference</div>
+  </div>
+
+  <p><em>Pre-Validation Reference for Field Interviews &amp; Surveys</em></p>
+<p>Prepared May 2026</p>
+<p>Dallas, Texas · Launch Market</p>
+<h2><strong>How to Use This Brief</strong></h2>
+<p>This document is the pre-validation reference for Pulse’s Dallas market research. Every hypothesis below should be confirmed or disproved by a combination of consumer survey data, vendor interviews, and man-on-the-street conversations. The goal is not to be right — it is to be testable.</p>
+<p>The brief is organized so each section can be paired with specific field questions:</p>
+<p>Sections 2–3 establish the size and shape of the market. These ground the investor narrative.</p>
+<p>Section 4 maps how Dallas discovers today — what Pulse competes against and where the real-time gap sits.</p>
+<p>Section 5 lays out four audience segments and a set of cross-cutting filters. The survey and interviews should validate which segments are real and which filters drive use.</p>
+<p>Section 6 documents neighborhood density patterns and signals which areas matter most for launch.</p>
+<p>Section 7 is the competitive positioning argument.</p>
+<p>Section 8 covers large-scale events as a recurring product wedge — with the 2026 FIFA World Cup as the immediate case study, but framed as a repeatable pattern, not a dependency.</p>
+<p>Section 9 is the validation framework: for each hypothesis, what must be true for it to hold, and what would falsify it.</p>
+<p><em>Treat field research as the disconfirmation layer. If five out of ten interviews kill a segment hypothesis, that is a finding, not a setback. The cost of being wrong is highest after launch — cheapest right now.</em></p>
+<h2><strong>1. Executive Summary</strong></h2>
+<h3><strong>The Pulse hypothesis</strong></h3>
+<p>Pulse is a real-time city discovery and offer platform launching in Dallas. The product surfaces what is trending, busy, or actively offering value across multiple categories — food and drink, beauty, wellness, entertainment, and retail — personalized to the user’s preferences and filtered by lifestyle constraints (kid-friendly, dog-friendly, accessibility, and others). On the supply side, vendors get a dashboard to publish live offers, manage their visibility, and access data on momentum and conversion.</p>
+<p>Dallas was chosen as the launch market for four reasons: a young median age, a deep and growing restaurant and lifestyle vendor base, a high volume of year-round visitors who arrive without local knowledge, and a calendar of recurring large-scale events that create predictable demand spikes.</p>
+<h3><strong>Top-line market findings</strong></h3>
+<p><strong>The Dallas market is structurally young and high-frequency. </strong>Median age in the city is 33.4 versus 39.2 nationally, with the 25–44 cohort earning the highest median household income in the city ($76,912). This is the core Pulse user.</p>
+<p><strong>Discovery in Dallas is editorial-heavy and real-time-poor. </strong>Five major lifestyle publishers compete for “best of” attention but none surface what is happening right now. Beli, the strongest emergent app, is restaurant-only and reactive (rank what you have already eaten). The real-time, multi-category, vendor-connected gap is open.</p>
+<p><strong>The vendor base is large and addressable. </strong>DFW supports approximately 16,000 restaurants. The City of Dallas alone has 3,900–5,500 depending on count method, plus 661 bars, 258 coffee shops, and 166 cafes. 91% of Texas restaurants employ fewer than 50 people — small-business owners who can be reached directly and who currently rely on Yelp, Google, and Instagram.</p>
+<p><strong>Tourism is a steady-state demand source independent of any single event. </strong>Dallas welcomes roughly 27.7 million visitors annually, generating $10.9B in economic impact. About 80% are convention or business travelers — short stays, multiple meals out per day, no local context. This audience exists every week of the year, not just during the World Cup.</p>
+<p><strong>Lifestyle filters that initially read as “nice to have” are in fact category-defining. </strong>Dog-friendly and family-friendly each have dedicated publishing ecosystems and proven pure-play venues in Dallas. 43% of Texas households own a dog, and Texas health code restricts dogs to outdoor patios — making “dog-friendly patio” a legally enforced filter, not a preference.</p>
+<p><strong>Large-scale events are a repeatable product wedge. </strong>Dallas hosts 2M+ visitors at the State Fair every fall, a college football rivalry weekend that draws six figures, a marathon, a holiday parade, Pride, and dozens of conventions per year. The 2026 FIFA World Cup is the largest of these wedges in product history but not a one-time event — it is a template.</p>
+<p>Each of these findings is supported in the sections that follow and should be tested in the field.</p>
+<h2><strong>2. The Dallas Discovery Market</strong></h2>
+<h3><strong>2.1 Population &amp; Demographics</strong></h3>
+<p>The City of Dallas has a population of approximately 1.3 million within a Dallas–Fort Worth–Arlington metropolitan area exceeding 8 million. The city itself is structurally younger and more income-diverse than the metro, which matters for product targeting because Pulse’s core hypothesis depends on a high-frequency 25–44 cohort.</p>
+<p><em>Source: US Census Bureau ACS 2024 1-year and 5-year estimates; Census Reporter; Neilsberg.</em></p>
+<p>Three implications matter for Pulse:</p>
+<p>The 25–44 spending core is large and matches Pulse’s primary user hypothesis. This cohort is also the highest dog and pet-ownership group nationally and the most likely to use mobile-first discovery tools.</p>
+<p>A 24.5% foreign-born share — nearly double the US average — means a meaningful share of Dallas residents themselves move within the city as relative newcomers, increasing the utility of a discovery layer.</p>
+<p>The Hispanic/Latino plurality means cuisine, beauty, and entertainment categories skew differently than in coastal markets. Mexican cuisine alone represents 633–1,300 Dallas restaurants depending on count method — the single largest cuisine category.</p>
+<h3><strong>2.2 Spending &amp; Consumer Behavior</strong></h3>
+<p>Texas households spend an average of $4,200 per year on food consumed away from home. The DFW metro restaurant industry generated more than $20 billion in sales in 2023, making it one of the largest urban dining economies in the country.</p>
+<p>Discovery behavior in the state is dominated by a few channels:</p>
+<p><strong>68% of Texas diners </strong>use Google Reviews to choose a new restaurant. This is the incumbent default Pulse must displace or layer on top of.</p>
+<p><strong>42% of Texas diners </strong>prefer mobile apps for ordering and payment. The mobile-native premise is supported.</p>
+<p><strong>83% of restaurant sales in 2024 </strong>were off-premises (takeout, delivery, drive-thru). Counterintuitively this strengthens the case for an in-person discovery app: as off-premises commoditizes, the in-person decision — where to actually go — carries more weight per occasion.</p>
+<p><strong>Weekend brunch traffic in Dallas grew 15% in 2023. </strong>This is one of several signals that day-part fragmentation (morning, brunch, day drinking, dinner, late night) is intensifying — a tailwind for a filter-driven product.</p>
+<h3><strong>2.3 Tourism Baseline (Year-Round)</strong></h3>
+<p>Tourism is one of Dallas’s ten largest industries and is structurally distinct from the World Cup spike covered in Section 8. The steady-state visitor economy is the foundation.</p>
+<p><em>Source: Visit Dallas, Tourism Economics, Hotel Association of North Texas.</em></p>
+<p>The 80% business-traveler figure is critical. Per a recent Axios Dallas analysis, the city has a “branding problem” — visitors come for conventions, not because Dallas was the destination they chose. This is a Pulse opportunity, not a constraint:</p>
+<p>Convention attendees stay 2–4 days, eat 6–10 meals out, often within a few miles of the Kay Bailey Hutchison Convention Center, and arrive without local knowledge. They are exactly the user Pulse is built for.</p>
+<p>They produce a steady weekly demand floor independent of leisure tourism, which is itself growing.</p>
+<p>Their spending pattern — high frequency, narrow geography, time-pressured — maps onto the real-time, location-aware feature set.</p>
+<h2><strong>3. Supply Side: The Dallas Business Landscape</strong></h2>
+<h3><strong>3.1 Restaurants, Bars, Cafes</strong></h3>
+<p>DFW supports approximately 16,000 restaurants, with the City of Dallas accounting for somewhere between 3,974 and 5,470 establishments depending on whether the count uses Google Maps listings (broader) or licensed food establishments (narrower). The city’s restaurant-per-capita ratio sits at roughly 1 per 238 residents — one of the higher densities among large US cities.</p>
+<p><em>Source: Foodylytics, Oysterlink (Google Maps data); Texas Restaurant Association.</em></p>
+<h3><strong>3.2 Vendor Profile</strong></h3>
+<p>Two structural facts about Texas restaurants matter for Pulse’s vendor strategy:</p>
+<p><strong>91% of Texas restaurants employ fewer than 50 people. </strong>These are independent operators or small-chain franchisees — directly addressable, decision-able by one or two people, and currently spending on Yelp, Google Ads, Instagram boosts, and printed marketing they cannot easily attribute.</p>
+<p><strong>68% of Texas restaurants are independent. </strong>Independents have less leverage with national platforms and more incentive to test a new local distribution channel that promises momentum and traffic.</p>
+<p>The implication is that vendor outreach should target the 68% independent segment first — these are the businesses for whom Pulse changes economics most. Multi-unit chains can be sequenced later.</p>
+<h3><strong>3.3 Beauty, Wellness, Entertainment, Retail</strong></h3>
+<p>Comprehensive Dallas-specific counts for non-restaurant categories are less standardized in public data. This is itself a finding: the discovery ecosystem around beauty, wellness, and entertainment is fragmented across category-specific tools (MindBody, Fresha, Booksy, StyleSeat, Eventbrite, Resy), each of which solves booking for one vertical without offering cross-category city momentum.</p>
+<p>Pulse’s multi-category positioning is a structural advantage here. A consumer planning a Saturday — brunch, blowout, afternoon drinks, dinner — has to switch between four different platforms today. This is a top priority area for primary research; the consumer survey should specifically test how often users blend categories within a single outing.</p>
+<h2><strong>4. How Dallas Discovers Today</strong></h2>
+<h3><strong>4.1 Editorial Ecosystem</strong></h3>
+<p>Dallas has an unusually deep lifestyle publishing landscape. Eleven major publications regularly produce “best of” content covering the categories Pulse would surface in real time. These publications are competitors for attention, but they are also potential partners and — critically — they validate that demand for curated discovery exists.</p>
+<h3><strong>4.2 Apps &amp; Platforms</strong></h3>
+<p>The app landscape splits into four functional categories, none of which currently compete with Pulse on its full positioning.</p>
+<p><strong>Discovery (utility-based)</strong></p>
+<p><strong>Google Maps. </strong>The default for almost everyone. Won the proximity search game; loses on curation, social signal, and offers. 68% of Texas diners cite Google Reviews as their primary tool.</p>
+<p><strong>Yelp. </strong>Comprehensive but viewed by Gen Z and younger millennials as dated. Posted 22M reviews in 2023 and 21M in 2024 — declining engagement.</p>
+<p><strong>TripAdvisor. </strong>Tourist default but skews older and is increasingly perceived as outdated for in-destination decisions.</p>
+<p><strong>Discovery (social/curatorial)</strong></p>
+<p><strong>Beli. </strong>The breakout discovery app of 2024–2025. 75M+ ratings as of late 2025 with 80% of users under 35. Launched in NYC, Chicago, and SF; growing into Dallas. Restaurant-only. Personal-ranked-list and friend-graph based. Reactive (rate what you have been to) rather than real-time. No vendor side, no offers, no multi-category. Pulse’s nearest social-discovery competitor but solving a different problem.</p>
+<p><strong>The Infatuation app. </strong>Editorial guides plus Resy reservations. Curated, slow, no live signal.</p>
+<p><strong>Eater. </strong>Editorial heatmaps and “Eater 38” in app form. Same constraints as the website.</p>
+<p><strong>Booking &amp; utility</strong></p>
+<p><strong>Resy / OpenTable. </strong>Reservation infrastructure. Adjacent to Pulse, not competitive — a potential integration partner.</p>
+<p><strong>MindBody / Fresha / Booksy / StyleSeat. </strong>Vertical-specific booking for beauty and wellness. Strong within their verticals; absent from cross-category discovery.</p>
+<p><strong>Vertical/personal lists</strong></p>
+<p><strong>Mapstr, Savor, Apple Maps Guides. </strong>Personal-mapping tools. Niche audiences.</p>
+<p><strong>BringFido. </strong>Dog-specific national directory; useful for travelers but thin on real-time.</p>
+<h3><strong>4.3 The Real-Time Gap</strong></h3>
+<p>Reading across the editorial and app landscapes produces one structural conclusion. Every existing tool answers one of two questions:</p>
+<p>“What is generally good?” — editorial guides, Beli rankings, Yelp star averages.</p>
+<p>“Can I book this?” — Resy, OpenTable, MindBody.</p>
+<p>None of them answer the question Pulse is built around: </p>
+<p><em>“What is happening right now — in my city, in my categories, filtered to my life, with offers I can act on tonight?”</em><em>   — The Pulse problem statement</em></p>
+<p>This is the whitespace. The competitive section (§7) returns to this argument with positioning specifics.</p>
+<h2><strong>5. Audience Segments &amp; Filter Hypotheses</strong></h2>
+<p>The original Pulse hypothesis centered a single user: a 25–35 Dallas resident looking for a fun night out, day-drinking spot, or trending beauty/wellness location. Field feedback and secondary research suggest this is correct but incomplete. The four segments below are the working hypothesis to validate. The cross-cutting filters in §5.6 are tested as feature priorities, not separate audiences.</p>
+<h3><strong>5.1 Young Professionals, 25–35</strong></h3>
+<p><strong>Hypothesis: </strong>The original Pulse core user. High-frequency outings (multiple per week), lives in or near walkable neighborhoods, trusts friend recommendations and Instagram/TikTok over institutional reviews.</p>
+<p><strong>Supporting evidence: </strong>Dallas city median age 33.4; the 25–44 cohort earns the highest median household income at $76,912; Knox-Henderson, Uptown, Deep Ellum, and Bishop Arts are explicitly profiled by multiple publishers as young-professional neighborhoods. Beli’s 80%-under-35 user base in adjacent cities is direct evidence of mobile-native discovery adoption in this cohort.</p>
+<p><strong>What to validate: </strong>Frequency of new-place trial; primary discovery channels; willingness to switch to a new app; price sensitivity for offers.</p>
+<p><strong>What would disprove it: </strong>Survey responses showing the cohort is loyal to existing tools (Google Maps + IG) without complaint, or that new-place trial frequency is below 1–2 per month.</p>
+<h3><strong>5.2 Elevated Parents, 30–45</strong></h3>
+<p><strong>Hypothesis: </strong>Parents who refuse to downgrade their dining and lifestyle quality but find the existing discovery tools fail at filtering for kid-compatible spots that meet their adult standards.</p>
+<p><em>“Either the people publishing these lists don’t have children, or they really don’t think children belong in actual restaurants that serve delicious food. Being foodies — we refuse to downgrade our dining out experiences to fast food, order at the counter, BOWLING ALLEYS, etc.”</em><em>   — The Migoni Kitchen, a Dallas foodie-mom blog</em></p>
+<p><strong>Supporting evidence: </strong>Three Dallas-specific publishers (Dallas Moms, theCityMoms, Mommy Poppins) compete in this niche. Visit Dallas maintains a dedicated family-brunch and family-dining content series. The Migoni quote articulates a pain point that the existing publisher solutions do not solve well.</p>
+<p><strong>What to validate: </strong>Whether parents in the 30–45 income-bracket cohort feel their dining choices are constrained by their family status; whether they would use a filter that promised “kid-compatible AND not a downgrade”; whether the same parents also engage with non-family categories (beauty, wellness) that would broaden the use case.</p>
+<p><strong>What would disprove it: </strong>If parent respondents report they have already solved this with private networks (mom Facebook groups, friend recommendations) and do not feel the gap.</p>
+<h3><strong>5.3 Dog-Forward Households, 25–50</strong></h3>
+<p><strong>Hypothesis: </strong>A meaningful subset of Dallas residents organize a substantial share of their outings around whether their dog can come. This is not a niche — it is a default for a meaningful subgroup.</p>
+<p><strong>Supporting evidence: </strong>43% of Texas households own a dog; the French Bulldog is the most popular breed in Dallas; Texas health code restricts dogs to outdoor patios, making dog-friendly an enforceable, high-stakes filter; D Magazine, Dallasites101, BringFido, SusieDrinks Dallas, Visit Dallas, and Texas Goldendoodle Lovers all maintain ongoing dog-friendly Dallas guides; pure-play venues such as Mutts Canine Cantina (Uptown bar/restaurant with off-leash dog park) prove the unit economics of the category.</p>
+<p><strong>What to validate: </strong>What share of Dallas residents take their dog to a third place at least monthly; how often dog-compatibility kills an otherwise attractive option; whether non-dog-owners view dog-friendly venues positively, neutrally, or negatively.</p>
+<p><strong>What would disprove it: </strong>If most dog owners report they leave the dog at home for outings of any length, or if existing tools (Google Maps photos, BringFido) already solve their problem to satisfaction.</p>
+<h3><strong>5.4 Wellness-Focused, 25–45</strong></h3>
+<p><strong>Hypothesis: </strong>A cohort of users who actively seek beauty, fitness, and wellness experiences (hair, nails, lashes, gyms, spa, recovery, yoga) and treat these as social/discoverable in the same way they treat dining.</p>
+<p><strong>Supporting evidence: </strong>Pulse’s original category list includes Beauty and Fitness. Knox-Henderson, West Village, and Uptown have high concentrations of boutique fitness studios, salons, and recovery spas. The category-specific booking tools (MindBody, Fresha, Booksy) prove demand exists — but none surface momentum or a real-time “hot right now” layer.</p>
+<p><strong>What to validate: </strong>Whether wellness category usage is high enough frequency to support a discovery layer (vs. booking, where users typically pick a regular provider and stick); whether trending/new-opening wellness spots draw the same exploratory behavior as restaurants.</p>
+<p><strong>What would disprove it: </strong>If wellness consumption is dominated by repeat-provider relationships and trial frequency is too low to drive recurring app use.</p>
+<h3><strong>5.5 Visitors (Year-Round, Non-Event)</strong></h3>
+<p><strong>Hypothesis: </strong>The 27.7M annual visitors to Dallas, of whom approximately 80% are convention or business travelers, are an addressable audience independent of any specific event. They arrive for 2–4 days, eat out 6–10 times, and have no local context.</p>
+<p><strong>Supporting evidence: </strong>Visit Dallas / Tourism Economics 2024 report, Hotel Association of North Texas data on the 21,840-room development pipeline (national #1), and Axios Dallas reporting on the city’s convention-driven visitor mix. Hotel concierges and IBC media corps both function as Pulse’s natural intermediary distribution.</p>
+<p><strong>What to validate: </strong>Whether business travelers will actually download a city-specific app for a 2–3 day trip; whether convention organizers, hotel concierges, or corporate travel teams would pre-promote Pulse; whether language and currency localization meaningfully expands the addressable share.</p>
+<p><strong>What would disprove it: </strong>If business travelers report defaulting entirely to hotel concierge and rideshare-driver advice without app friction, or if their employers’ corporate travel tools (Concur, etc.) capture them upstream.</p>
+<h3><strong>5.6 Cross-Cutting Filters (Test as Features, Not Segments)</strong></h3>
+<p>Some preferences cut across the four primary segments and should be tested as filter features, not separate audiences. Each one increases trust and retention if it works.</p>
+<p><em>The bathroom scorecard in particular is worth special attention: it is a feature no major competitor owns, has clear demand signal in user reviews and Reddit threads across cities, and indexes across multiple segments. Test it carefully in the survey and field interviews — it could be one of Pulse’s defining differentiators.</em></p>
+<h2><strong>6. Neighborhood Map</strong></h2>
+<p>Dallas’s 20+ named neighborhoods cluster into a smaller set that matter for Pulse launch. Neighborhood density and persona-fit determine where vendor outreach concentrates first and where consumer marketing targets initial downloads.</p>
+<p><em>Sources: Visit Dallas; Dallasites101; D Magazine; The Infatuation; Census Reporter neighborhood data.</em></p>
+<p><em>For launch sequencing, the survey should ask explicitly which neighborhoods respondents most often go out in. The expected top three (Bishop Arts, Knox-Henderson, Uptown) should produce 50%+ combined response if the prior is correct — if the distribution is much flatter, the launch strategy needs broader vendor coverage from day one rather than concentrated density.</em></p>
+<h2><strong>7. Competitive Positioning</strong></h2>
+<p>Pulse’s differentiation rests on five intersecting features. Each is partly served by an existing tool, but none of those tools combine all five. The strategic claim is that the combination is the product.</p>
+<h3><strong>Direct competitor: Beli (close read)</strong></h3>
+<p>Beli is the most often-cited adjacent app and deserves its own analysis. Several facts:</p>
+<p>Founded 2021 by ex-McKinsey Harvard Business School graduates; restaurant-only; ranking-and-list product.</p>
+<p>75M+ ratings as of late 2025, growing largely through word-of-mouth referral.</p>
+<p>80% of users under 35; especially strong on college campuses (187 university leaderboards).</p>
+<p>Concentration in NYC, Chicago, SF; growing into Dallas.</p>
+<p>Critically: Beli is reactive (rate what you have eaten) and personal (your list, your friends). It does not surface what is happening in a city right now, does not include vendors, and does not extend beyond restaurants.</p>
+<p>This is the right kind of competition for Pulse. Beli proves the willingness of the under-35 cohort to install a dedicated discovery app, and proves social-graph mechanics work for food. Pulse is positioned at the inverse of every constraint: real-time vs. retrospective, multi-category vs. restaurant-only, vendor-connected vs. consumer-only, momentum vs. ranking. A user can keep Beli open for the food diary use case and use Pulse for the “where should I go right now” use case without conflict.</p>
+<p><em>This is also worth saying out loud for investors: Beli’s growth pattern is the proof that a focused, differentiated discovery app can break through the Yelp/Google duopoly with a young audience. Pulse follows the same structural opening with a wider product surface.</em></p>
+<h2><strong>8. Large-Scale Events: The Surge Strategy</strong></h2>
+<h3><strong>8.1 Why Events Matter for a Discovery App</strong></h3>
+<p>Discovery apps face a recurring product problem: most local users have settled patterns and discover slowly. New residents, visitors, and people whose routines have just been disrupted are the high-frequency discovery users. Events compress all three of those audiences into the same window.</p>
+<p>This produces three structural advantages for Pulse:</p>
+<p>Event windows concentrate non-resident demand. A user who would never download a Dallas app while at home in Munich downloads one when traveling to Dallas for three days.</p>
+<p>Event windows compress vendor incentive. A bar that does not pay attention to a discovery channel during a normal week pays close attention during a 100,000-visitors-per-day window.</p>
+<p>Event windows produce social proof at speed. Use, ratings, and content velocity in event windows trains the algorithm and builds the city graph faster than organic-only growth.</p>
+<p>The product implication is that Pulse should treat events as a permanent product mode — a feature surface that can be activated, branded, and tuned per event — rather than as a one-time launch tactic. The 2026 FIFA World Cup is the largest single application of this surface, but the same surface serves State Fair weekends, Red River Rivalry, conventions, marathons, and so on.</p>
+<h3><strong>8.2 Recurring Annual Surges (Dallas Calendar)</strong></h3>
+<p>Dallas already produces a calendar of recurring large-scale events that map onto Pulse’s event surface. These are predictable, repeatable, and addressable every year regardless of what the World Cup does.</p>
+<p>This calendar is the steady-state product. Even with no World Cup, Dallas alone produces enough recurring high-density windows to validate the event-mode product surface.</p>
+<h3><strong>8.3 Mega-Event Wedges</strong></h3>
+<p>Mega-events are a distinct category from recurring surges. They happen once per year or less, draw international visitors, and rewrite the local economy for weeks at a time. Pulse should pick one or two mega-events per year per city and build dedicated mode features around each.</p>
+<p><strong>Case study: 2026 FIFA World Cup</strong></p>
+<p>The single largest event in Dallas history, and Pulse’s launch wedge.</p>
+<p><em>Source: Dallas Sports Commission, North Texas FWC Organizing Committee, FIFA, Visit Dallas.</em></p>
+<p>Per the Dallas Sports Commission, each match has been described as the financial equivalent of hosting a Super Bowl — making the tournament collectively comparable to staging nine Super Bowls in five weeks. For Pulse, this is the largest single window of high-velocity, low-context discovery demand the company will see in its first three years of existence.</p>
+<p><strong>Future mega-event wedges (post-Dallas, expansion roadmap)</strong></p>
+<p>2027 NCAA Final Four (potential host bids; specific city to be confirmed).</p>
+<p>2028 Los Angeles Summer Olympics. The repeatable wedge for Pulse Los Angeles, with Dallas’s World Cup playbook as the template.</p>
+<p>Super Bowl rotations. AT&amp;T Stadium has hosted Super Bowl XLV; future bids ongoing.</p>
+<p>F1 Las Vegas Grand Prix (annual, Vegas market).</p>
+<p>SXSW (annual, Austin market).</p>
+<p>Major concert tours (Taylor Swift Eras-class events) compress demand into 2–3 day windows.</p>
+<p>The investor narrative is straightforward: Pulse Dallas validates the event wedge with the World Cup; Pulse Houston, Pulse Atlanta, and Pulse LA each replicate it with their own mega-event sequence. The product surface is the same; only the calendar changes per city.</p>
+<h3><strong>8.4 Implications for the Pulse Product</strong></h3>
+<p>Three product principles follow from treating events as a permanent surface rather than a one-time tactic:</p>
+<p><strong>World Cup Mode is Version 1 of Event Mode. </strong>The same UI, vendor flow, and category schema should activate for State Fair, Red River, Pride, conventions, and beyond. Build it once; reskin it per event.</p>
+<p><strong>The vendor pitch evolves event by event. </strong>“Be visible during World Cup match days” is a more concrete sale than “be visible all the time.” Each event becomes a vendor activation campaign.</p>
+<p><strong>City expansion is event-led. </strong>When Pulse expands to Houston, the calendar drives launch sequencing: Houston has 7 World Cup matches, the Houston Livestock Show and Rodeo (2.4M attendees, comparable to State Fair), and an annual major convention calendar. The same playbook applies.</p>
+<h2><strong>9. Validation Plan</strong></h2>
+<p>Each hypothesis in this brief should be tested against field data. The framework below ties survey questions and interview prompts to specific decision triggers. The point is not to confirm what is written here — it is to make disconfirmation visible and actionable.</p>
+<h3><strong>9.1 Persona validation triggers</strong></h3>
+<h3><strong>9.2 Filter validation triggers</strong></h3>
+<p>From the survey importance question (1–5 scale across all filters):</p>
+<p>A filter scoring ≥4.0 average is a confirmed feature priority.</p>
+<p>A filter scoring 3.0–3.9 is a secondary feature; build but de-emphasize.</p>
+<p>A filter scoring &lt;3.0 is dropped or repurposed unless the qualitative interviews surface a strong narrative.</p>
+<p><em>Pay particular attention to the bathroom scorecard. If it scores &gt;4.0 across multiple segments, it is a defining feature. If it scores &lt;3.0 it is dropped for v1.</em></p>
+<h3><strong>9.3 Behavior validation triggers</strong></h3>
+<p>Q4 (new-place trial frequency): if median respondent reports 3+ new places/month, the high-frequency assumption holds.</p>
+<p>Q11 (real-time signal influence): if ≥60% answer Often or Always, the real-time premise is validated.</p>
+<p>Q15 (likelihood to try Pulse): if ≥50% answer 4 or 5, the willingness assumption holds.</p>
+<p>Q10 (open-ended category gap): use the responses to test for unmet needs not anticipated by this brief. Anything mentioned by 3+ respondents is a finding.</p>
+<h3><strong>9.4 Vendor validation triggers</strong></h3>
+<p>From the vendor interview guide (already complete):</p>
+<p>If ≥6/14 vendors interviewed report “yes, would pay” for Pulse at the proposed pricing, vendor demand is confirmed.</p>
+<p>If ≥3/14 commit to founding vendor status, the launch supply is materially de-risked.</p>
+<p>If &lt;2/14 commit to founding vendor status, pricing or positioning needs revision before launch.</p>
+<h3><strong>9.5 Distribution and timing</strong></h3>
+<p>Consumer survey: 100–300 responses, distributed via Meta/IG ads ($100–200 budget) targeted to Dallas zips, plus posted to Dallas Foodies, Dallas Moms, Dallas Dog Parents, and Reddit r/Dallas. Field for 2 weeks.</p>
+<p>Vendor interviews: 14 conversations using the existing branded interview guide, scheduled across the next 4 weeks.</p>
+<p>Man-on-the-street interviews: 10–15 informal conversations at high-traffic locations (Klyde Warren Park, Bishop Arts Saturday, Katy Trail, NorthPark Center). Field over 2–3 weekends.</p>
+<p>Synthesis and decision review: a single review session at the end of the 4–6 week window, with hypothesis-by-hypothesis confirmation, disconfirmation, or revision.</p>
+<h2><strong>10. Sources &amp; Further Reading</strong></h2>
+<p><strong>Demographics &amp; Population</strong></p>
+<p>US Census Bureau, ACS 2024 1-year and 5-year estimates</p>
+<p>Census Reporter — Dallas, TX profile data</p>
+<p>Neilsberg — Dallas, TX Median Household Income by Age, 2025 update</p>
+<p>World Population Review — Dallas, Texas Population 2026</p>
+<p>Point2Homes — Dallas, TX Demographics</p>
+<p>City of Dallas Office of Economic Development — dallasecodev.org/Demographics</p>
+<p><strong>Tourism &amp; Visitor Economy</strong></p>
+<p>Visit Dallas — 2024 economic impact press releases and About page</p>
+<p>Tourism Economics (Oxford Economics) — 2023 Dallas Tourism Impact Study</p>
+<p>Hotel Association of North Texas — hotel pipeline data</p>
+<p>Axios Dallas — “Visit Dallas is promoting city as tourist destination,” May 2025</p>
+<p>Dallas Hospitality Authority — Dallas Tourism and Visitor Economy</p>
+<p><strong>Restaurant &amp; Vendor Industry</strong></p>
+<p>Texas Restaurant Association — industry overview reports</p>
+<p>Restroworks — Texas Restaurant Statistics 2026</p>
+<p>Foodylytics — City and state restaurant counts</p>
+<p>Oysterlink — Dallas restaurant breakdown</p>
+<p>National Restaurant Association — State Statistics</p>
+<p>WiFi Talents — Texas Restaurant Industry: Data Reports 2026</p>
+<p><strong>Editorial Discovery Ecosystem</strong></p>
+<p>The Infatuation — Dallas Guides</p>
+<p>Eater Dallas</p>
+<p>D Magazine — Best Of guides, dining and lifestyle</p>
+<p>Dallas Observer — restaurants section</p>
+<p>PaperCity Magazine</p>
+<p>Dallasites101 — Neighborhood and category guides</p>
+<p>Dallas Moms, theCityMoms, Mommy Poppins</p>
+<p>BringFido, SusieDrinks Dallas, Texas Goldendoodle Lovers — dog-friendly verticals</p>
+<p>Visit Dallas — dog-friendly and family-friendly content series</p>
+<p><strong>App Competitive Landscape</strong></p>
+<p>Beli — beliapp.com; Wikipedia entry; InsideHook “Does Dining Out Even Count if It’s Not on Beli”, Dec 2025</p>
+<p>Food Network — “How Beli Became Gen Z’s Yelp,” August 2025</p>
+<p>Today.com — “How the Beli App Is Gamifying Our Restaurant Experiences”</p>
+<p>Savor — Beli App Alternatives review</p>
+<p><strong>Pet Ownership &amp; Lifestyle Filters</strong></p>
+<p>Dogster — 16 Pet Ownership Statistics in Texas, January 2026</p>
+<p>AVMA — US Pet Ownership Statistics, 2025</p>
+<p>World Animal Foundation — Pet Ownership Statistics 2026</p>
+<p>PetRadar — US Pet Ownership 2025</p>
+<p>APPA — National Pet Owners Survey</p>
+<p>Dallas Animal Services — statistical reports</p>
+<p><strong>Events &amp; World Cup</strong></p>
+<p>Dallas Sports Commission and North Texas FWC Organizing Committee</p>
+<p>Visit Dallas — Annual Events</p>
+<p>State Fair of Texas — bigtex.com annual reports</p>
+<p>WFAA — “FIFA World Cup expected to bring millions of fans…”</p>
+<p>D Magazine — “Is Dallas Ready? An Inside Look at Where Planning Stands for the 2026 FIFA World Cup”</p>
+<p>FIFA — dallasedc.com/dallas-x-fifa-world-cup-26</p>
+<p>Yahoo Sports / FourFourTwo — “World Cup 2026 fan zones”</p>
+<p>Sports Travel Magazine — 2026 FIFA World Cup Host City Guide: Dallas</p>
+<p><strong>Recommended sources for ongoing research</strong></p>
+<p>Dallas Open Data Portal — Dallas-specific business and demographic data</p>
+<p>SafeGraph and Placer.ai — foot traffic patterns by venue</p>
+<p>Reddit r/Dallas, r/askDallas — unfiltered local sentiment</p>
+<p>Dallas Foodies, Dallas Moms, Dallas Dog Parents Facebook groups — community signal</p>
+<p>Toast, Square, Resy public trend reports — vendor-side benchmarks</p>
+<h3><strong>PULSE</strong></h3>
+<p><em>Dallas · Launch Market</em></p>
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

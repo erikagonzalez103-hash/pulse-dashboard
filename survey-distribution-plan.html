@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Survey Distribution Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+(function() {
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Research</div>
+    <h1 class="doc-title">Survey Distribution Plan</h1>
+    <p class="doc-subtitle">Operational plan: campaign architecture, ad sets, creative variants, budget pacing, the 70% organic playbook, UTM scheme, and optimization rules.</p>
+    <div class="doc-meta">12 pages &middot; Meta + organic</div>
+  </div>
+
+  <p><em>Meta / Instagram Ad Creative + Targeting</em></p>
+<p><em>Companion to the Pulse Dallas Market Research Brief</em></p>
+<h2><strong>1. Strategic Frame</strong></h2>
+<p>This document is the operational plan for distributing the Pulse Dallas consumer survey. The goal is 100–300 qualified survey completions inside a 14-day window for under $200 in paid spend, with the majority of completions actually sourced from free organic channels.</p>
+<p>The most important strategic point: </p>
+<p><em>“The objective is qualified completions, not impressions, clicks, or downloads. Every campaign decision below — objective, audience, creative, channel mix — is calibrated to that one outcome.”</em><em>   — The single point of focus</em></p>
+<h3><strong>Why a small Meta budget works</strong></h3>
+<p>A common mistake is to assume $150–200 is too small to be useful. For survey distribution it’s adequate, for three reasons:</p>
+<p>Survey ads have higher CTR than commerce ads (no purchase commitment, low-friction CTA), so impression efficiency is naturally better.</p>
+<p>Meta’s Traffic objective optimizes against clicks within hours, not days — you don’t need conversion volume to teach the algorithm.</p>
+<p>Paid Meta is one of three channels in this plan, not the whole plan. The other 70% of completions come free from organic channels (§6).</p>
+<h3><strong>Headline metrics to expect</strong></h3>
+<h2><strong>2. Campaign Architecture</strong></h2>
+<h3><strong>Objective</strong></h3>
+<p><strong>Traffic. </strong>Not Conversions. With this budget, Conversions doesn’t have enough events to optimize from and will deliver inefficiently. Traffic optimizes for clicks against the survey URL.</p>
+<h3><strong>Placements</strong></h3>
+<p>Instagram Feed</p>
+<p>Instagram Stories</p>
+<p>Instagram Reels</p>
+<p>Facebook Feed (if budget allows)</p>
+<p>Skip Audience Network — click quality is poor for surveys.</p>
+<h3><strong>Schedule</strong></h3>
+<p>Total flight: 14 days</p>
+<p>Days 1–3: All variants live, equal budget split</p>
+<p>Days 4–5: Cull bottom 50% of variants by CTR; reallocate budget</p>
+<p>Days 6–10: Top performers run at full budget</p>
+<p>Days 11–14: Refresh creative or pause if completions plateau</p>
+<h3><strong>Bid strategy</strong></h3>
+<p>Use “Highest volume” (default) for the first 5 days.</p>
+<p>Switch to manual bid cap at $0.80–$1.00 per click only if costs run high in days 6–7.</p>
+<p>Don’t use Cost cap or Bid cap initially — they constrain learning.</p>
+<h2><strong>3. Audience Strategy</strong></h2>
+<p>Three ad sets, tested simultaneously. Treat the broad ad set as the control — it should outperform expectations more often than not.</p>
+<h3><strong>Ad Set A — Broad Dallas (control)</strong></h3>
+<p>Geo: Dallas–Fort Worth–Arlington DMA, plus 25-mile radius from city center</p>
+<p>Age: 25–45</p>
+<p>Gender: All</p>
+<p>Interests: None (broad)</p>
+<p>Languages: English, Spanish</p>
+<p><em>Why broad works: Meta’s algorithm is now better at identifying intent from behavior than from interest tags. Broad ad sets typically outperform narrow ones for awareness-stage objectives.</em></p>
+<h3><strong>Ad Set B — Lifestyle Layered</strong></h3>
+<p>Geo: Same as A</p>
+<p>Age: 25–45</p>
+<p>Interests: any of — Restaurants, Dining out, Cocktail bars, Yoga, Pilates, Boutique fitness, Weekend brunch, Dog adoption, Pet care, Family activities, Travel, Concerts, Live music</p>
+<p><em>This ad set serves as the persona-targeted variant. Useful for confirming whether interest-based targeting beats broad in this specific case.</em></p>
+<h3><strong>Ad Set C — Lookalike (only if seed list ≥ 100)</strong></h3>
+<p>1% lookalike of any existing email list (Pulse waitlist, vendor interview contacts, personal network)</p>
+<p>Geo: same as A; Age: 25–45</p>
+<p><em>Skip Ad Set C entirely if the seed list is under 100. Lookalikes built from small seeds are noise.</em></p>
+<h3><strong>Exclusions</strong></h3>
+<p>Exclude users who have already clicked the survey URL (Custom Audience from URL traffic). This prevents re-serving people who started but didn’t finish.</p>
+<p>Exclude employees of competing apps (Beli, Yelp, Resy, Eater — small Custom Audiences via job title) if available. Optional.</p>
+<h2><strong>4. Creative — Four Variants</strong></h2>
+<p>Creative variants test angles, not word choice. Each one imagines a different person stopping their scroll for a different reason. Keep all four roughly equivalent in production quality so comparisons are fair.</p>
+<h3><strong>Variant A — The Insider</strong></h3>
+<p><strong>Angle: </strong>Belonging. “You’re a real Dallas person; help us build the right thing.”</p>
+<p><strong>Headline: </strong>Help us build the Dallas discovery app you actually wish existed.</p>
+<p><strong>Body: </strong>5-minute survey. $25 gift card raffle. We’re building Pulse — a real-time city discovery app launching in Dallas — and we’d rather get it right than guess.</p>
+<p><strong>CTA button: </strong>Take Survey</p>
+<p><strong>Visual direction: </strong>Dallas skyline at golden hour. Pulse wordmark in gold overlaid in upper right. Editorial, not stock-photo. Pexels CDN for sourcing per Pulse imagery convention.</p>
+<h3><strong>Variant B — The Pain Point</strong></h3>
+<p><strong>Angle: </strong>Frustration. The shared experience of the ‘where should we go’ group chat loop.</p>
+<p><strong>Headline: </strong>Tired of the group chat “where should we go” loop?</p>
+<p><strong>Body: </strong>Same. So we’re building Pulse — a Dallas discovery app that actually answers the question. Take 5 minutes, help us shape it, win a $25 gift card.</p>
+<p><strong>CTA button: </strong>Help Build It</p>
+<p><strong>Visual direction: </strong>Phone screen mockup of a generic group chat with too many “idk where do you wanna go” messages. Slightly humorous. Navy + gold accent.</p>
+<h3><strong>Variant C — Persona-Targeted (Dog)</strong></h3>
+<p><strong>Angle: </strong>Specific identity. Reader recognizes themselves.</p>
+<p><strong>Headline: </strong>If you’ve ever wondered ‘can my dog come?’ — read this.</p>
+<p><strong>Body: </strong>We’re building Pulse, a Dallas discovery app that filters for what actually matters to you — dog-friendly patios included. 5 minutes, $25 gift card raffle, we’d love your input.</p>
+<p><strong>CTA button: </strong>Take Survey</p>
+<p><strong>Visual direction: </strong>Dog on a Dallas patio at golden hour. Authentic, not staged. Owner partly visible in soft focus.</p>
+<p><em>Note: Use this variant only against Ad Set B with dog-related interests, or as a standalone test. Don’t serve it broadly to non-owners.</em></p>
+<h3><strong>Variant D — Reward-Forward</strong></h3>
+<p><strong>Angle: </strong>Direct value exchange. No story — just incentive.</p>
+<p><strong>Headline: </strong>5 minutes. $25 gift card raffle. Help shape Dallas’s next discovery app.</p>
+<p><strong>Body: </strong>We’re Pulse. We’re launching in Dallas. Take 5 minutes, tell us how you actually find places, win a $25 gift card. That’s the deal.</p>
+<p><strong>CTA button: </strong>Take Survey</p>
+<p><strong>Visual direction: </strong>Clean type-driven design. The $25 figure prominent. Pulse navy + gold palette.</p>
+<p><em>Production note: Static images are sufficient. Don’t over-invest in video for survey ads — production cost-to-yield ratio is poor at this budget level.</em></p>
+<h2><strong>5. Budget Allocation</strong></h2>
+<p>Reserve up to $50 for boosting the best-performing variant in week 2 if early signal is strong. If early signal is weak, pause spend and reinvest the remaining budget in additional raffle prizes (3 × $25) to lift completion on organic channels instead.</p>
+<h2><strong>6. The 70% — Free Distribution Channels</strong></h2>
+<p>Paid Meta should account for roughly 30% of total survey completions. The remaining 70% comes from free organic channels, which typically yield higher-quality, more articulate responses.</p>
+<h3><strong>6.1 Reddit r/Dallas and r/askDallas</strong></h3>
+<p>Pre-work: Build at least 50 karma in r/Dallas through genuine comments and contributions over 1–2 weeks before posting. Reddit moderators and users can identify and downvote naked promo.</p>
+<p>Post format: Honest first-person framing. “Hey r/Dallas — I’m building something for Dallas and I’d love your input. Here’s the survey [link]. Happy to share results back when it closes.”</p>
+<p>Time of day: Tuesday–Thursday, 9–11am Central. Avoid weekends and holidays.</p>
+<p>Expected yield: 30–80 completions if the post lands well.</p>
+<h3><strong>6.2 Facebook Groups</strong></h3>
+<p>Always ask the admin for permission before posting. Most will say yes if you offer to share results back.</p>
+<p>Dallas Foodies</p>
+<p>Dallas Moms (and adjacent neighborhood mom groups)</p>
+<p>Dallas Dog Parents</p>
+<p>Dallas Young Professionals</p>
+<p>Dallas Black Foodies</p>
+<p>Dallas Latino Foodies</p>
+<p>Neighborhood-specific groups (Bishop Arts residents, Knox-Henderson, etc.)</p>
+<p><em>Yield per group: 5–20 completions if posted thoughtfully. Total potential: 30–120 completions across groups.</em></p>
+<h3><strong>6.3 Nextdoor</strong></h3>
+<p>Different demographic than Instagram — older, parents, homeowners. Useful for filling out the elevated-parents segment.</p>
+<p>Post in a few specific neighborhood feeds rather than broad.</p>
+<p>Yield: 10–30 completions; lower volume but high signal quality.</p>
+<h3><strong>6.4 Personal Network</strong></h3>
+<p>LinkedIn post: framed as a founder asking for help, not as marketing.</p>
+<p>Personal Instagram: story + grid post. Ask for shares specifically, not just completions.</p>
+<p>Email blast to your contacts: short, personal, 50–100 sends.</p>
+<p>Yield: 20–60 completions, very high quality (people who know you take care).</p>
+<h3><strong>6.5 Vendor Interview Closing</strong></h3>
+<p>At the end of every vendor interview, ask: “Would you mind sharing this consumer survey with your customers? It helps the same effort.” Frame it as helping each other.</p>
+<p>Vendor distribution channels: their Instagram, their email list, in-store flyers.</p>
+<p>Yield per vendor: 5–25 completions if they actually share. Across 14 vendors, potentially 30–100 completions.</p>
+<p>Strategic value: This is the strongest signal you can put in front of an investor — “we didn’t just talk to vendors and customers separately. Vendors helped us find customers. The supply side is already activated.”</p>
+<h2><strong>7. Tracking &amp; Attribution</strong></h2>
+<p>Without tracking, you cannot tell which variant or which channel produced the most useful responses. UTM parameters are non-negotiable.</p>
+<h3><strong>UTM scheme</strong></h3>
+<p>Append a tagged version of your survey URL to each variant and each channel. Example structure:</p>
+<p><em>https://yourform.com/pulse-survey?utm_source=meta&amp;utm_medium=cpc&amp;utm_campaign=pulse_survey&amp;utm_content=variant_a</em></p>
+<h3><strong>Capturing UTMs</strong></h3>
+<p>In Google Forms: use the URL Parameter feature in form settings; map each UTM to a hidden form field.</p>
+<p>In Typeform: use Hidden Fields feature; same mapping logic.</p>
+<p>Verify before launch by visiting one tagged URL and checking that the hidden fields populate correctly.</p>
+<h3><strong>What to compare across channels</strong></h3>
+<p>Completion count (volume — obvious)</p>
+<p>Completion rate (% of clicks that finish the survey — quality signal)</p>
+<p>Time-on-survey (longer time often = more thoughtful answers)</p>
+<p>Open-ended response length (the qualitative gold)</p>
+<p>Demographic skew (to ensure no segment is over- or under-represented)</p>
+<p><em>The highest-CTR variant is rarely the highest-quality variant. Use the channel-by-channel breakdown to weight findings appropriately.</em></p>
+<h2><strong>8. Optimization Rules</strong></h2>
+<p>Pre-decide what triggers a change so that decisions in-flight are mechanical, not emotional.</p>
+<h3><strong>Daily checks (5 minutes)</strong></h3>
+<p>Spend pacing on track? (Daily target = total budget ÷ 14)</p>
+<p>Any ad set spending more than 2x its share? Pause if so.</p>
+<p>Any creative variant with CTR below 0.5% after 1,000 impressions? Pause.</p>
+<h3><strong>End of Day 3 review (30 minutes)</strong></h3>
+<p>Rank variants by CTR. Pause bottom 50%.</p>
+<p>Reallocate paused-variant budget to top performers.</p>
+<p>If completion rate (clicks → finishes) is below 25%, the survey itself is too long or unclear — fix the survey, not the ads.</p>
+<h3><strong>End of Day 7 review (60 minutes)</strong></h3>
+<p>Total completions on track for goal? (Target: 50% of goal by day 7)</p>
+<p>If yes: hold steady, refresh creative on day 10.</p>
+<p>If no: deploy reserve budget against best variant; double organic posting cadence.</p>
+<h3><strong>Kill criteria</strong></h3>
+<p>Pause any variant under 0.5% CTR after 2,000 impressions.</p>
+<p>Pause entire campaign if cost-per-completion exceeds $4 by day 7 — the survey or audience is the problem, not the spend.</p>
+<p>Stop early if you hit 300 completions before day 14. Diminishing returns past that point.</p>
+<h2><strong>9. Common Pitfalls</strong></h2>
+<p>Surveying for too long. 5 minutes is the practical ceiling. The Pulse 20-question survey is right at the edge — kill any optional question that drags the timer past 5 minutes for the median respondent.</p>
+<p>Treating Meta as the primary channel. It’s the smallest of the three by yield. Spend more energy on the organic channels.</p>
+<p>Optimizing for completes when you should be optimizing for quality. A 100-completion thoughtful survey beats a 500-completion noisy one.</p>
+<p>Targeting too narrowly out of the gate. Stacked interest layers raise CPMs and constrain delivery. Trust the broad audience to find the right people.</p>
+<p>Running creative more than 7 days. Even good creative fatigues. Refresh the visual each week even if copy stays the same.</p>
+<p>Forgetting to capture UTMs. Without them, the post-survey analysis is guesswork.</p>
+<p>Pitching too hard in organic posts. Reddit and Facebook groups punish naked promotion. Lead with the ask, not the brand.</p>
+<h2><strong>10. Definition of Done</strong></h2>
+<p>The campaign is complete when the following are true:</p>
+<p>≥150 total survey completions across paid and organic channels.</p>
+<p>Representation across all four primary segments (§5 of the Brief), with at least 20 responses per segment.</p>
+<p>UTM data attached to every response, allowing channel-by-channel analysis.</p>
+<p>At least 30 open-ended responses to Q5 (skip reasons) and Q10 (category gaps).</p>
+<p>Zero open spend on under-performing variants.</p>
+<p><em>Synthesize findings against the validation triggers in §9 of the Market Research Brief and the Field Interview Guide. Every confirmed/disconfirmed hypothesis goes into the investor narrative.</em></p>
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

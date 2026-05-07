@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · 4-Week Research Timeline</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+(function() {
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Research</div>
+    <h1 class="doc-title">4-Week Research Timeline</h1>
+    <p class="doc-subtitle">Four parallel tracks &mdash; survey, vendor interviews, field research, and synthesis &mdash; with daily milestones and four decision checkpoints. The full prep schedule extending to soft launch on July 14 lives in the team's Google Sheet.</p>
+    <div class="doc-meta">May 6 – June 2, 2026 &middot; Wall reference</div>
+  </div>
+
+  <h2>The Four Tracks</h2>
+  <p>Research runs in four parallel tracks for four weeks. Each track has its own owner, weekly milestone, and synthesis contribution. None waits on another to start, and all four converge on Day 28.</p>
+
+  <div class="card-block">
+    <div class="card-block-title">Track 1 &middot; Consumer Survey</div>
+    <p>Goal: 200&ndash;300 qualified responses from Dallas residents. Channels: Meta paid ads (3 ad sets, 4 creatives), organic posts in pre-cleared FB groups, Reddit r/Dallas, Nextdoor, founder share. Budget: $100&ndash;$200 paid, 70% organic.</p>
+  </div>
+
+  <div class="card-block">
+    <div class="card-block-title">Track 2 &middot; Vendor Interviews</div>
+    <p>Goal: 14 vendor conversations across categories (food/drink, beauty, fitness, entertainment, retail). 30&ndash;45 minutes each. Outcome: pricing willingness data, World Cup excitement assessment, founding vendor commitments.</p>
+  </div>
+
+  <div class="card-block">
+    <div class="card-block-title">Track 3 &middot; Field Interviews</div>
+    <p>Goal: 50&ndash;75 man-on-the-street conversations across 4 locations (Klyde Warren Park, Bishop Arts, Katy Trail, Deep Ellum). Branched discussion guide covering the four personas. Outcome: persona validation or revision.</p>
+  </div>
+
+  <div class="card-block">
+    <div class="card-block-title">Track 4 &middot; Synthesis &amp; Investor Materials</div>
+    <p>Goal: turn research into product priorities, persona updates, and investor-ready findings deck. Begins Week 2 with running synthesis; concludes Day 28 with go/no-go on launch features.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Week-by-Week</h2>
+
+  <h3>Week 1 &middot; May 6&ndash;12 &middot; Setup &amp; Launch</h3>
+  <ul>
+    <li><strong>Day 1:</strong> Finalize survey questions, set up UTMs, build 4 ad creatives</li>
+    <li><strong>Day 2&ndash;3:</strong> Configure Meta ad sets, finalize 14-vendor target list, first vendor outreach</li>
+    <li><strong>Day 4:</strong> SURVEY GOES LIVE. Email blast to network. Post in 2 FB groups. First 3&ndash;4 vendor interviews scheduled.</li>
+    <li><strong>Day 7:</strong> Pulse check &mdash; is data flowing? Course-correct ads if needed.</li>
+  </ul>
+
+  <h3>Week 2 &middot; May 13&ndash;19 &middot; Acceleration</h3>
+  <ul>
+    <li><strong>Day 8:</strong> Ad optimization &mdash; kill bottom 50% variants, scale winners</li>
+    <li><strong>Day 9&ndash;10:</strong> Reddit and Nextdoor posts (after karma built where needed)</li>
+    <li><strong>Day 10&ndash;13:</strong> First field interview batch at Klyde Warren, Bishop Arts, Katy Trail</li>
+    <li><strong>Day 13&ndash;14:</strong> Vendor interviews 5&ndash;9</li>
+    <li><strong>Day 14:</strong> MID-RESEARCH SYNTHESIS &mdash; review 100+ responses, refine direction.</li>
+  </ul>
+
+  <h3>Week 3 &middot; May 20&ndash;26 &middot; Final Push</h3>
+  <ul>
+    <li><strong>Day 15&ndash;17:</strong> Add 2&ndash;3 more FB groups, second field batch (Deep Ellum, NorthPark)</li>
+    <li><strong>Day 18&ndash;20:</strong> Final 4&ndash;5 vendor interviews, secure founding vendor commitments</li>
+    <li><strong>Day 21:</strong> Survey closes. CLOSE-OR-EXTEND DECISION based on response volume.</li>
+  </ul>
+
+  <h3>Week 4 &middot; May 27&ndash;June 2 &middot; Synthesis</h3>
+  <ul>
+    <li><strong>Day 22&ndash;25:</strong> Validation triggers tally. Personas updated based on field data.</li>
+    <li><strong>Day 26&ndash;27:</strong> Investor findings deck v1. Press kit prep.</li>
+    <li><strong>Day 28:</strong> GO/NO-GO on product priorities for launch.</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>The Four Decision Checkpoints</h2>
+  <table>
+    <tr><th>Day</th><th>Decision</th><th>Trigger to Pivot</th></tr>
+    <tr><td>Day 7</td><td>Pulse check</td><td>&lt;10 survey responses by EOD &rarr; revise ads or pivot channels</td></tr>
+    <tr><td>Day 14</td><td>Mid-review</td><td>Validation triggers missing for any persona &rarr; investigate or revise</td></tr>
+    <tr><td>Day 21</td><td>Close-or-extend</td><td>&lt;150 responses &rarr; extend survey 5 days OR cut a persona</td></tr>
+    <tr><td>Day 28</td><td>GO/NO-GO</td><td>2+ personas disconfirmed &rarr; revisit launch scope</td></tr>
+  </table>
+
+  <h2>Definition of Done (June 2)</h2>
+  <ul>
+    <li>200+ qualified survey responses, segmented by persona</li>
+    <li>14 vendor interviews complete, with pricing willingness data</li>
+    <li>50+ field conversations completed across 4 locations</li>
+    <li>Personas updated, validated or revised against field data</li>
+    <li>Founding vendor commitments secured (target: 8&ndash;12)</li>
+    <li>Investor-ready findings deck produced</li>
+    <li>Product priorities locked for build phase (Weeks 5&ndash;7)</li>
+  </ul>
+
+  <div class="card-block" style="margin-top: 40px;">
+    <div class="card-block-title">After June 2 &middot; The remaining six weeks</div>
+    <p>The full prep schedule extending from June 3 through soft launch on July 14 lives in the team's <a href="https://docs.google.com/spreadsheets/d/1iDKmEpN_Jut84_hMGOU7lR-Ffzr2gIAz/edit?usp=sharing&amp;ouid=114424033929191169175&amp;rtpof=true&amp;sd=true" target="_blank" style="color: var(--pulse-gold);">Google Sheet</a>. That's where weekly status, owners, and live milestone updates happen.</p>
+  </div>
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>

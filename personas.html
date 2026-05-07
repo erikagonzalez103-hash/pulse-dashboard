@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse · Audience Personas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Gate check: redirect to hub if not unlocked -->
+<script>
+(function() {
+  // Check if user unlocked via the hub. If not, redirect home.
+  // Reads from localStorage (set by the hub gate on successful unlock).
+  try {
+    var token = localStorage.getItem('pulse_team_unlocked_v1') 
+             || sessionStorage.getItem('pulse_team_unlocked_v1');
+    if (!token) {
+      // Not unlocked — show locked message + link back to hub
+      document.documentElement.style.visibility = 'hidden';
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = `
+          <div class="locked-message">
+            <img src="../pulse-mark-compass.jpg" alt="Pulse" class="locked-mark">
+            <div class="locked-title">PULSE</div>
+            <div class="locked-sub">Team Access Required</div>
+            <p>Please return to the hub and enter the team password to view this document.</p>
+            <a href="../index.html">Open Hub →</a>
+          </div>`;
+        document.documentElement.style.visibility = 'visible';
+      });
+    }
+  } catch (e) { /* storage unavailable, fail open */ }
+})();
+</script>
+
+<header class="doc-header">
+  <a href="../index.html" class="doc-brand">
+    <img src="../pulse-mark-compass.jpg" alt="Pulse">
+    <span class="doc-brand-text">PULSE</span>
+  </a>
+  <a href="../index.html" class="doc-back">← Back to Hub</a>
+</header>
+
+<main class="doc-content">
+  <div class="doc-title-block">
+    <div class="doc-eyebrow">Strategy</div>
+    <h1 class="doc-title">Audience Personas</h1>
+    <p class="doc-subtitle">Four primary segments for the Pulse Dallas launch. Each is a hypothesis &mdash; field research is designed to confirm or disprove.</p>
+    <div class="doc-meta">Investor-ready &middot; Validation pending</div>
+  </div>
+
+  
+<p class="lede">Four primary audience segments for the Pulse Dallas launch. Each is testable &mdash; field research is designed to confirm or disprove the claims here, not to validate them by default.</p>
+
+<div class="card-block">
+  <div class="card-block-title">The Insider &middot; Young Professional, 25&ndash;35</div>
+  <p><strong>Stat:</strong> ~285,000 in DFW core. Highest discretionary spend of any persona.</p>
+  <p><strong>Neighborhoods:</strong> Deep Ellum, Bishop Arts, Trinity Groves, Knox-Henderson, Lower Greenville.</p>
+  <p><strong>Pain quote:</strong> <em>"Yelp always gives me the same five places. I want what just opened &mdash; what's actually buzzing this week."</em></p>
+  <p><strong>Why Pulse:</strong> Reputation tools fail them &mdash; they're past the obvious answers. Pulse surfaces what's accelerating, which is exactly what they want.</p>
+  <p><strong>Validation status:</strong> Hypothesis. Field interviews planned for Klyde Warren Park, Deep Ellum Friday nights.</p>
+</div>
+
+<div class="card-block">
+  <div class="card-block-title">The Elevated Parent &middot; 32&ndash;48, Family-First but Style-Conscious</div>
+  <p><strong>Stat:</strong> ~410,000 in greater DFW. Highest sustained monthly spend on dining/activities.</p>
+  <p><strong>Neighborhoods:</strong> Lakewood, M-Streets, Preston Hollow, Plano, Frisco.</p>
+  <p><strong>Pain quote:</strong> <em>"I want somewhere actually nice that also doesn't make me feel like the only family. By the time something is on the parenting blogs, it's already overrun."</em></p>
+  <p><strong>Why Pulse:</strong> They want momentum without the chaos. The neighborhood-level signal helps them find places that are growing but not yet swamped.</p>
+  <p><strong>Validation status:</strong> Hypothesis. Interview targets at NorthPark Center, Klyde Warren Park weekend mornings.</p>
+</div>
+
+<div class="card-block">
+  <div class="card-block-title">The Dog-Forward &middot; Pet Owner, Lifestyle-Centered</div>
+  <p><strong>Stat:</strong> 38% of Dallas households own dogs. Highest specific-need-driven discovery behavior.</p>
+  <p><strong>Neighborhoods:</strong> Katy Trail corridor, White Rock Lake, Bishop Arts.</p>
+  <p><strong>Pain quote:</strong> <em>"Just tell me which patios actually let dogs and aren't lying about it. And which ones are good right now &mdash; not which ones <strong>were</strong> good."</em></p>
+  <p><strong>Why Pulse:</strong> Specific-need filtering is broken in current tools. Pulse can layer dog-friendly + currently-busy as a real-time filter.</p>
+  <p><strong>Validation status:</strong> Hypothesis. Interview targets along Katy Trail, weekend mornings.</p>
+</div>
+
+<div class="card-block">
+  <div class="card-block-title">The Visitor &middot; Out-of-Town, World Cup Especially</div>
+  <p><strong>Stat:</strong> Dallas hosts 9 World Cup matches; FIFA expects 250k+ visitors across the tournament.</p>
+  <p><strong>Neighborhoods:</strong> Wherever their hotel drops them. Initially Downtown, Uptown.</p>
+  <p><strong>Pain quote:</strong> <em>"I have one night here. Where do I go? My hotel concierge has fifteen recommendations and they all sound the same."</em></p>
+  <p><strong>Why Pulse:</strong> No reputation context, time-bounded decisions, distance-flexible. Momentum is the entire signal they have.</p>
+  <p><strong>Validation status:</strong> Hypothesis. Interview targets at Downtown hotels during pre-WC test events, weekend tourists.</p>
+</div>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="doc-footer-text">PULSE · Confidential · Subject to NDA</div>
+</footer>
+
+</body>
+</html>
