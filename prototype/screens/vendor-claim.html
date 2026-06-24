@@ -28,7 +28,7 @@
 .sec{margin:0 0 12px;}
 .path{position:relative;background:rgba(255,255,255,.025);border:1px solid var(--border-soft);border-radius:16px;padding:18px 18px 16px;margin-bottom:14px;cursor:pointer;overflow:hidden;transition:border-color .2s,transform .2s;}
 .path:hover{border-color:var(--gold-deep);transform:translateY(-2px);}
-.path.primary{border-color:var(--border);background:var(--gold-soft);}
+.path.primary{border-color:var(--gold);background:rgba(255,255,255,.03);}
 .path.primary:hover{border-color:var(--gold);}
 .path-bloom{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(202,168,113,.10),transparent 65%);pointer-events:none;}
 .path .p-eye{font-family:var(--font-sub);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;position:relative;display:flex;align-items:center;justify-content:space-between;}
@@ -81,14 +81,14 @@
 
     <div class="sec">How would you like to start?</div>
 
-    <div class="path primary" onclick="go('vendor-01-dashboard.html')">
+    <div class="path primary" onclick="go('vendor-01-dashboard-new.html')">
       <div class="path-bloom"></div>
       <div class="p-eye"><span>Concierge</span><span class="rec">For launch partners</span></div>
       <div class="p-name">Set it up with Pulse</div>
       <div class="p-desc">A Pulse partner builds your first offers with you — in your voice, matched to your room. The way the HER House venues come on.</div>
     </div>
 
-    <div class="path" onclick="go('vendor-01-dashboard.html')">
+    <div class="path" onclick="go('vendor-01-dashboard-new.html')">
       <div class="p-eye"><span>Self-serve</span></div>
       <div class="p-name">Claim it yourself</div>
       <div class="p-desc">Verify you run the venue, then build your first offer in minutes. We review it, then it's live.</div>

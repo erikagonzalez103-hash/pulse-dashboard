@@ -33,6 +33,12 @@
 .heat-ring .dotc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
 .heat-ring .dotc i{width:4px;height:4px;border-radius:50%;background:var(--gold);box-shadow:0 0 6px var(--gold);}
 .fc-meta .heat-word{font-family:var(--font-sub);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);}
+/* heat gradient stops driven by tokens (no hardcoded amber) */
+#heat stop:nth-of-type(1){stop-color:var(--gold);}
+#heat stop:nth-of-type(2){stop-color:var(--heat-mid);}
+#heat stop:nth-of-type(3){stop-color:var(--red-bright);}
+.feedcard .newpill.soldout{color:var(--red-bright);border-color:color-mix(in srgb, var(--red-bright) 45%, transparent);}
+.feedcard .heat-word.wait{color:var(--gold);}
 /* bottom tab bar */
 .tabbar{position:absolute;left:0;right:0;bottom:0;z-index:25;display:flex;background:linear-gradient(0deg,var(--bg) 72%,transparent);border-top:1px solid var(--hair);padding:10px 0 16px;}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;background:none;border:none;cursor:pointer;color:var(--text-faint);font-family:var(--font-sub);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;}
@@ -64,14 +70,14 @@
 
   <div class="body">
     <div class="greet">
-      <div class="eye"><span class="live"></span>Tonight · live</div>
-      <h2>Where Dallas is right now.</h2>
+      <div class="eye"><span class="live"></span><span id="feed-eye">Tonight · live</span></div>
+      <h2 id="feed-head">Where Dallas is right now.</h2>
     </div>
 
     <div class="seg timeseg">
-      <button class="on">Tonight</button>
-      <button onclick="sendPrompt('Show this weekend.')">This weekend</button>
-      <button onclick="sendPrompt('Show anytime.')">Anytime</button>
+      <button class="on" onclick="pulseWhen(this,'Tonight · live','Where Dallas is right now.')">Tonight</button>
+      <button onclick="pulseWhen(this,'This weekend','What\'s building for the weekend.')">This weekend</button>
+      <button onclick="pulseWhen(this,'Anytime','The rooms worth planning around.')">Anytime</button>
     </div>
     <div class="catscroll">
       <span class="chip on">All</span>
@@ -103,11 +109,11 @@
     </div>
 
     <!-- 2 · cocktail bar — nightlife, warming -->
-    <div class="feedcard" onclick="sendPrompt('Open the Marfa Room nightcap offer.')">
+    <div class="feedcard" onclick="go('consumer-detail-full.html')">
       <div class="img">
-        <span class="newpill">Building</span>
+        <span class="newpill soldout">Claimed out</span>
         <span class="heat-ring">
-          <svg viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="19"/><circle class="fill" cx="22" cy="22" r="19" stroke-dasharray="119" stroke-dashoffset="54"/></svg>
+          <svg viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="19"/><circle class="fill" cx="22" cy="22" r="19" stroke-dasharray="119" stroke-dashoffset="0"/></svg>
           <span class="dotc"><i></i></span>
         </span>
         <span class="glow"></span>
@@ -116,8 +122,8 @@
         <div class="venue">The Marfa Room · Deep Ellum</div>
         <div class="fc-name">Last-call flight — agave &amp; amaro</div>
         <div class="fc-meta">
-          <span class="seats">Tonight · from 9 PM</span>
-          <span class="heat-word">Reserve a spot</span>
+          <span class="seats">Tonight · 9 PM · full</span>
+          <span class="heat-word wait">Waitlist open</span>
         </div>
       </div>
     </div>
@@ -170,5 +176,13 @@
     <button class="tab" onclick="sendPrompt('Open your check-ins and plans.')"><span class="ti">&#9788;</span>You</button>
   </div>
 </div>
+<script>
+  function pulseWhen(btn, eye, head){
+    document.querySelectorAll('.timeseg button').forEach(function(b){ b.classList.remove('on'); });
+    btn.classList.add('on');
+    document.getElementById('feed-eye').textContent = eye;
+    document.getElementById('feed-head').textContent = head;
+  }
+</script>
 <script src="../scripts/nav.js"></script>
 </body></html>

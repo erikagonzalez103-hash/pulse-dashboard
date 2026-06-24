@@ -25,6 +25,9 @@
   --red:#9C1519;
   --red-bright:#BB2726;
   --red-soft:rgba(156,21,25,0.14);
+  /* heat gradient: gold -> amber midpoint -> hot red. Used by the momentum ring
+     and the consumer heat rings. Reference these instead of hardcoding the amber. */
+  --heat-mid:#D8843F;
 
   /* — Text — */
   --text:#F2EEE3;
